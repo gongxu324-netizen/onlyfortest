@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PP Krit × GUCCI — Anti-Bot Multi-Style Engine</title>
+<title>PP Krit × GUCCI — High Fashion Anti-Bot Engine</title>
 <style>
   * {
     margin: 0;
@@ -177,7 +177,7 @@
 <body>
 <div class="container">
   <h1>✨ PP Krit × GUCCI — Anti-Bot Engine ✨</h1>
-  <p class="subtitle">Multi-Tone & Natural Style Alternating Generator</p>
+  <p class="subtitle">Multi-Tone & Front-Row Ambassador Style Generator</p>
   
   <div class="tabs">
     <div class="tab active" id="tab-on-ig" data-mode="on-ig">ontheshow (IG/TT)</div>
@@ -194,169 +194,140 @@
 
 <script>
 const DB = {
-  // Strictly locked name
   NAME: "PP Krit",
   BRAND_IG: ["GUCCI", "Gucci"],
   BRAND_X: ["GUCCI", "Gucci", "@gucci"],
   MFW_VARIANTS: ["MFW", "Milan Fashion Week", "MFW26"],
 
-  // Style 1: High-Fashion Elegant
+  // 1. Elegant / Formal 风格 (着重表达：高奢优雅、个人风格与品牌交融、看秀风采、对 Demna 理念的诠释)
   FORMAL: {
     starters: [
-      "Breathtaking appearance from", "A true embodiment of elegance,", "Exuding pure sophistication,", 
-      "Sensational high-fashion moment for", "Redefining modern luxury,", "An absolutely captivating vision,", 
-      "Grace and grandeur personified in", "A mesmerizing display of haute couture from", "The epitome of refined glamour,", 
-      "Dressed to absolute perfection,", "A portrait of timeless beauty,", "Commanding attention with every stride,", 
-      "Refined, radiant, and utterly unforgettable,", "An evening of pure elegance courtesy of", "Sculpted by light and tailored to perfection,", 
-      "Every seam speaks of quiet luxury on", "Under the Milanese lights, nothing compares to", "A vision in monochrome and grace,", 
-      "The camera simply cannot do justice to", "Sophistication looks effortless on", "Unrivaled presence from", 
-      "A masterclass in modern sartorial art with", "Radiating pure royalty,", "An ethereal moment defined by"
-    ],
-    adverbs: [
-      "effortlessly", "gracefully", "with quiet confidence", "in truly remarkable fashion", 
-      "as only he can", "with an almost cinematic grace", "like it was tailored yesterday, just for him", 
-      "with subtle mastery", "impeccably", "with magnetic poise"
+      "Attending the show in sublime fashion,", "Front-row magnificence from", "A portrait of quiet luxury,", 
+      "Exuding aristocratic grace,", "An exquisite front-row moment with", "Defining modern sartorial art,", 
+      "Grace and high fashion effortlessly combined in", "A commanding presence from the front row,", 
+      "Redefining contemporary luxury,", "In perfect harmony with the house's vision,", 
+      "An ethereal vision at the front row,", "Bringing effortless poise to Milan,", 
+      "A masterclass in editorial elegance with", "Embodying Demna's artistic aesthetic,"
     ],
     verbs: [
-      "presents flawless tailoring in", "commands the event effortlessly wearing", "showcases remarkable poise in", 
-      "embodies timeless glamour with", "radiates understated luxury in", "delivers a striking sartorial statement in", 
-      "elevates the entire front row wearing", "captivates every lens in", "carries the heritage of the house with grace in", 
-      "drapes himself in quiet luxury wearing", "interprets modern couture flawlessly in", "wears with an air of aristocratic ease",
-      "defines contemporary elegance in", "steals the entire spotlight wearing", "transforms the runway ambiance in"
+      "interprets Demna's creative vision flawlessly in", "graces the Gucci front row wearing", 
+      "embodies the house's refined aesthetic in", "showcases magnetic fashion authority in", 
+      "complements Gucci's modern identity wearing", "translates couture heritage into pure personal style in", 
+      "captivates the entire front row wearing", "brings quiet sophistication to life in", 
+      "delivers an iconic fashion moment in", "breathes regal elegance into"
     ],
     phrases: [
-      "with impeccable silhouette and refined aura", "highlighting exquisite facial features and regal stature", 
-      "serving ethereal beauty with a commanding presence", "a masterclass in high-fashion aesthetics and charm", 
-      "with every detail exquisitely considered", "where classic craftsmanship meets modern allure", 
-      "a seamless fusion of artistry and elegance", "with poise that could silence an entire runway", 
-      "the fabric falls as if it were made solely for him", "a study in proportion, texture, and quiet confidence", 
-      "grace woven into every thread and gesture", "beauty that feels both classic and strikingly contemporary",
-      "captivating the eyes of global fashion elite", "an effortlessly iconic silhouette"
+      "showing a flawless synergy between personal charisma and brand identity", 
+      "where personal style meets Gucci's signature craftsmanship", 
+      "with an innate poise that commands every lens", 
+      "seamlessly fusing contemporary edge with timeless sophistication", 
+      "reflecting Demna's vision with effortless grandeur and charm", 
+      "a subtle yet powerful display of high-fashion sensibility", 
+      "bringing modern tailored elegance to the highest level", 
+      "highlighting exquisite features and an unmatched fashion aura"
     ],
     endings: [
-      "at Milan Fashion Week.", "for Gucci.", "an absolute highlight of the show.", "defining true elegance.", 
-      "a moment of pure couture poetry.", "reinforcing his fashion icon status.", "nothing short of extraordinary.", 
-      "destined for the best-dressed lists.", "a triumph of style and substance.", "the very definition of la dolce vita.", 
-      "leaving an indelible mark on the season.", "elegance in its most authentic form.", "pure poetry in motion.", 
-      "the kind of moment fashion history remembers.", "impossibly chic, impossibly him.", "a love letter to Italian craftsmanship.", 
-      "simply beyond compare.", "setting a new standard for runway luxury."
+      "at Milan Fashion Week.", "for Gucci.", "a true highlight of the show.", 
+      "the ultimate expression of modern elegance.", "an unforgettable fashion week moment.", 
+      "proving his status as a global fashion icon.", "a sublime collaboration of style and vision.", 
+      "leaving an everlasting impression."
     ]
   },
 
-  // 连接/转折词, 随机注入
-  CONNECTORS: ["honestly,", "and yet,", "somehow,", "truthfully,", "and just like that,", "needless to say,", "without question,", "undeniably,"],
-
-  // Style 2: Fan Hype
+  // 2. Fan Hype 风格
   HYPE: {
     starters: [
-      "OMG!!", "Look at him,", "I cannot breathe,", "Absolutely stunning,", "The main character is here,", 
-      "My heart can't handle this!!", "STOP EVERYTHING,", "Forever my favorite person,", "This is not a drill,", 
-      "He's just too precious,", "SPEECHLESS,", "CAN WE TALK ABOUT THIS,", "He really did that,", 
-      "HE SERVED AGAIN,", "Absolute perfection,"
+      "THE FRONT ROW KING IS HERE,", "Look at him in the front row,", "Unreal fashion aura from", 
+      "Absolutely mesmerizing,", "The main event of Milan Fashion Week,", "My heart stopped seeing", 
+      "SPEECHLESS at this look,", "Nobody does front-row chic like", "His style synergy with Gucci is unmatched,"
     ],
     verbs: [
-      "is glowing so bright in", "is making everyone take photos in", "is taking over the entire timeline in", 
-      "is serving pure perfection in", "is shining like a whole constellation in", "is blessing our feeds in", 
-      "is out-visualing everyone in", "is pure art in motion in", "is breaking the internet wearing", 
-      "is looking like a literal angel in", "is dominating every single feed in"
+      "is serving top-tier front-row glam in", "is glowing with pure elegance in", 
+      "is interpreting Demna's design so perfectly in", "is stealing every camera's focus wearing", 
+      "is bringing total high-fashion magic in", "is turning the front row into his personal portrait in"
     ],
     phrases: [
-      "such a handsome face and perfect body line", "his aura is literally out of this world", 
-      "that heavenly glow and gorgeous smile", "serving top-tier face card and unmatched elegance", 
-      "every angle is a magazine cover, every step is a statement", "the world truly isn't ready for this level of beauty", 
-      "he radiates warmth and star power at once", "one look and the whole timeline melted", 
-      "unreal visuals that leave everyone breathless", "literally the prettiest human being alive"
+      "that aristocratic poise and glowing visual card", "his unique charm blending so naturally with Gucci", 
+      "every side profile is literally a magazine cover", "the way he wears this outfit is pure high art", 
+      "serving effortless luxury and sweet smiles from the front row"
     ],
     endings: [
-      "so proud of him!", "he killed this look!", "can't take my eyes off!", "we love to see it!", 
-      "protect him at all costs!", "our brightest star!", "he deserves the entire world!", 
-      "always and forever supporting him!", "my heart is so full!", "the world is truly his runway!", 
-      "he was born for this moment!", "i would frame every single photo!", "tears in my eyes, pride in my heart!", 
-      "our superstar, our pride!", "this look lives in my mind rent free!", "he never misses, not once!", 
-      "simply the most beautiful person inside and out!", "give him everything right now!"
+      "so proud of our Brand Ambassador!", "he owned the show!", "can't take my eyes off him!", 
+      "he was born for high fashion!", "our global fashion icon!", "absolutely iconic!"
     ]
   },
 
-  // Hype 风格专属补充
-  HYPE_EXTRA: {
-    interjections: ["AAAAHHH", "be so fr right now", "not the way", "yall", "i'm actually shaking", "excuse me while I pass away", "the audacity of being this beautiful", "REAL KING SHIT"],
-    fangirl_verbs: ["has me on my knees for", "is bias-wrecking everyone in", "has the whole fandom screaming over", "is collecting everyone's hearts in", "just ended every other look with", "is completely resetting fashion in"],
-    soft_phrases: ["he looks like the softest dream", "that gentle smile could heal anything", "a whole warm hug in human form", "precious beyond words", "his kindness literally shines through", "a pure angel on earth"]
-  },
-
-  // 短句库 (<15 单词，进一步大大增加选词)
-  SHORT_FORMAL: [
-    "PP Krit wears GUCCI like poetry.", "GUCCI has found its icon: PP Krit.", "PP Krit, pure GUCCI elegance.",
-    "In GUCCI, PP Krit is unmatched.", "PP Krit commands GUCCI couture.", "GUCCI tailoring was made for PP Krit.",
-    "PP Krit turns GUCCI into poetry.", "Nothing rivals PP Krit in GUCCI.", "PP Krit defines modern GUCCI luxury.",
-    "GUCCI shines brighter with PP Krit.", "PP Krit in GUCCI: simply perfect.", "Every GUCCI thread suits PP Krit.",
-    "PP Krit elevates every GUCCI look.", "GUCCI's finest moment: PP Krit.", "PP Krit embodies the GUCCI spirit.",
-    "With PP Krit, GUCCI feels eternal.", "PP Krit and GUCCI: pure Milan magic.", "A front-row king: PP Krit in GUCCI.",
-    "GUCCI tailoring finds its muse in PP Krit.", "PP Krit carries GUCCI with quiet grace.", "Milan bows to PP Krit in GUCCI.",
-    "PP Krit: the finest note in GUCCI's symphony.", "Every GUCCI look is safer in PP Krit's hands.", "PP Krit makes couture feel personal.",
-    "Pure Italian luxury redefined by PP Krit for GUCCI.", "PP Krit in GUCCI is pure haute couture.", "Unstoppable elegance: PP Krit in GUCCI.",
-    "GUCCI's ultimate muse is PP Krit.", "Subtle power and grace: PP Krit for GUCCI.", "PP Krit owns the GUCCI runway."
-  ],
-
-  // aftertheshow 风格: 看秀之旅大放异彩 + 展望未来合作
+  // 3. After the show 风格 (主要强调看秀旅程、与 Demna 的友好合作、未来携手展望)
   AFTER: {
     starters: [
-      "What an extraordinary journey,", "From the front row to every front page,", "A dazzling chapter in fashion history,", 
-      "A show-stopping trip in Milan,", "An unforgettable fashion week,", "A triumphant Milan adventure,",
-      "Reflecting on a monumental fashion week,", "A magical Milan season concluded with"
+      "A remarkable show experience with Demna,", "Celebrating a triumphant show trip in Milan,", 
+      "Reflecting on an inspiring front-row moment,", "A beautiful chapter written with Gucci,", 
+      "From memorable front-row moments to warm exchanges with Demna,"
     ],
     verbs: [
-      "dazzled in", "owned every moment in", "shone brighter than every spotlight alongside", 
-      "made headlines worldwide in", "left the fashion world speechless in", "proved himself the undeniable face of",
-      "created an unforgettable sensation in", "wrote a new fashion legacy with"
+      "shared a wonderful artistic synergy with", "brought Demna's new collection to life with", 
+      "created an iconic Milan show memory alongside", "highlighted the house's creative spirit wearing"
     ],
     phrases: [
-      "with glowing coverage from Vogue, Elle and WWD", "as cameras chased his every breathtaking look", 
-      "the industry's eyes now fixed on his next move", "cementing his status as fashion's most-watched star", 
-      "with praise pouring in from across the fashion capitals", "his natural chemistry with the house shining through",
-      "taking global fashion media by storm", "setting the standard for future collaborations"
+      "showing deep mutual respect and shared fashion philosophy", 
+      "with global media praising his natural elegance and presence", 
+      "proving how seamlessly his personal style resonates with the brand", 
+      "leaving everyone inspired by this creative partnership"
     ],
     endings: [
-      "the future with GUCCI looks brighter than ever.", "we cannot wait for his next chapter with Demna and the house.", 
-      "excited to see what he and Demna create together next.", "this is only the beginning of a beautiful partnership.", 
-      "the best is yet to come for this iconic duo.", "a new fashion journey awaits, and we are ready.",
-      "forever inspired by this legendary partnership.", "an extraordinary chapter written in fashion history."
+      "excited for what PP Krit and Demna will create next.", 
+      "the future of this partnership looks brighter than ever.", 
+      "a perfect celebration of style and creativity.", 
+      "looking forward to the next iconic chapter together."
     ]
   },
 
-  // aftertheshow 短句库 (5-15词)
-  SHORT_AFTER: [
-    "PP Krit's GUCCI journey was pure magic.", "What a triumph for PP Krit and GUCCI.", "PP Krit owned every GUCCI headline.",
-    "The world watched PP Krit shine for GUCCI.", "PP Krit and GUCCI: a match made in Milan.", "Every camera loved PP Krit at GUCCI.",
-    "PP Krit's GUCCI moment captivated fashion media worldwide.", "Fashion's new golden boy: PP Krit for GUCCI.",
-    "The fashion world can't stop talking about PP Krit's GUCCI show.", "Milan belonged to PP Krit and GUCCI.",
-    "PP Krit's GUCCI takeover was simply iconic.", "All eyes were on PP Krit at GUCCI.", "PP Krit made GUCCI history this week.",
-    "The future looks dazzling for PP Krit and GUCCI.", "Next up: more magic from PP Krit, GUCCI and Demna.",
-    "A new GUCCI chapter begins for PP Krit.", "PP Krit left Milan with every headline.", "What a week for PP Krit and GUCCI.",
-    "PP Krit's GUCCI takeover has only begun.", "Milan will remember PP Krit's name.", "PP Krit turned a show trip into history.",
-    "The next GUCCI chapter belongs to PP Krit.", "PP Krit's fashion journey is just getting started.", "History made: PP Krit for GUCCI in Milan.",
-    "An unforgettable Milan show for PP Krit and GUCCI.", "PP Krit and GUCCI conquered Milan effortlessly."
+  CONNECTORS: ["honestly,", "without a doubt,", "truthfully,", "and as always,", "effortlessly,"],
+
+  // 4. 超短句库 (<15 单词，高频率随机切换)
+  SHORT_FORMAL: [
+    "PP Krit defines front-row elegance for GUCCI.",
+    "PP Krit flawlessly interprets Demna's GUCCI vision.",
+    "A sublime harmony of PP Krit's style and GUCCI.",
+    "PP Krit brings quiet luxury to the GUCCI front row.",
+    "GUCCI couture finds its modern muse in PP Krit.",
+    "PP Krit commands the GUCCI front row with poise.",
+    "Effortless charm: PP Krit attending GUCCI in Milan.",
+    "PP Krit x GUCCI: pure sartorial art.",
+    "PP Krit wears Demna's GUCCI with understated grandeur.",
+    "Impeccable poise from PP Krit at GUCCI.",
+    "PP Krit and GUCCI: a seamless blend of style.",
+    "Aristocratic grace defined by PP Krit for GUCCI.",
+    "PP Krit elevates every GUCCI design effortlessly.",
+    "Demna's vision alive in PP Krit at GUCCI."
   ],
 
   SHORT_HYPE: [
-    "PP Krit ate this GUCCI look.", "GUCCI never looked this good. PP Krit!", "PP Krit in GUCCI broke me.",
-    "This GUCCI fit on PP Krit? Perfect.", "PP Krit owns every GUCCI frame.", "GUCCI found its king: PP Krit.",
-    "PP Krit makes GUCCI look effortless.", "No one does GUCCI like PP Krit.", "PP Krit and GUCCI: a perfect match.",
-    "GUCCI could never miss with PP Krit.", "PP Krit's GUCCI era is everything.", "Screaming over PP Krit in GUCCI!",
-    "PP Krit turns GUCCI into art.", "GUCCI hit the jackpot with PP Krit.", "PP Krit in GUCCI is my religion.",
-    "This is PP Krit's GUCCI world.", "PP Krit in GUCCI? I'm unwell.", "GUCCI said let's give PP Krit everything.",
-    "PP Krit just rewrote the GUCCI lookbook.", "No thoughts, just PP Krit in GUCCI.", "PP Krit said GUCCI is mine now.",
-    "GUCCI could never top this. PP Krit did.", "PP Krit's GUCCI fit broke my whole feed.", "Protect PP Krit in GUCCI at all costs.",
-    "PP Krit serving pure GUCCI perfection!", "Obsessed with PP Krit in GUCCI!", "PP Krit in GUCCI is top tier."
+    "PP Krit in the GUCCI front row is unreal!",
+    "PP Krit ate this GUCCI look completely!",
+    "Front-row king PP Krit for GUCCI!",
+    "PP Krit's fashion aura in GUCCI is unmatched!",
+    "No one wears GUCCI like PP Krit!",
+    "PP Krit x GUCCI is pure visual perfection!",
+    "Obsessed with PP Krit's front-row GUCCI look!",
+    "PP Krit bringing top-tier glam to GUCCI!"
   ],
 
-  // 组合式短句部件: 极大地增加了可用词汇
+  SHORT_AFTER: [
+    "PP Krit's GUCCI show journey was unforgettable.",
+    "A wonderful showcase for PP Krit and Demna at GUCCI.",
+    "PP Krit and GUCCI: a match made in Milan.",
+    "Excited for the next chapter with PP Krit and Demna.",
+    "PP Krit made GUCCI history from the front row.",
+    "What an extraordinary GUCCI show trip for PP Krit."
+  ],
+
+  // 随机短句生成部件 (模块化拼接)
   SHORT_BITS: {
-    adjectives: ["pure", "absolute", "quiet", "modern", "timeless", "effortless", "radiant", "impeccable", "stunning", "unmatched", "understated", "breathtaking", "dreamy", "polished", "supreme", "flawless", "iconic", "exquisite"],
-    nouns: ["elegance", "luxury", "poetry", "perfection", "grace", "magic", "sophistication", "glamour", "couture", "brilliance", "charm", "allure", "artistry", "majesty"],
-    verbs2: ["owns", "elevates", "redefines", "embodies", "commands", "transforms", "lights up", "anchors", "completes", "graces", "defines", "captures"],
-    objects: ["every frame", "the front row", "Milan", "the runway", "the night", "every lens", "the season", "the silhouette", "the spotlight", "our feeds"],
-    hypeBits: ["ate", "snapped", "served", "delivered", "devoured", "conquered", "owned", "shut down", "slayed"]
+    adj: ["sublime", "aristocratic", "effortless", "understated", "radiant", "impeccable", "regal", "exquisite", "magnetic"],
+    noun: ["poise", "grace", "synergy", "elegance", "authority", "glamour", "harmony", "sophistication"],
+    verb: ["embodies", "interprets", "elevates", "complements", "defines", "graces", "captures"],
+    target: ["Demna's vision", "the GUCCI front row", "modern luxury", "the house's spirit", "high-fashion artistry"]
   }
 };
 
@@ -364,8 +335,8 @@ const X_TAGS = "PP KRIT X GUCCI MFW26\n#GUCCISS27xPPKRIT\n#GucciTheStoreShow\n#G
 const X_LIMIT = 280;
 const PAGE_SIZE = 8;
 
-// ===== 跨刷新去重 =====
-const SEEN_KEY = "ppgen_seen_v1";
+// 跨刷新去重逻辑
+const SEEN_KEY = "ppgen_seen_v2";
 const SEEN_CAP = 800;
 function loadSeen() {
   try {
@@ -388,8 +359,7 @@ let currentMode = "on-ig";
 const pick = arr => arr[(Math.random() * arr.length) | 0];
 
 function buildMainText(styleGroup, styleType, isAfter, isX) {
-  const brandPool = isX ? DB.BRAND_X : DB.BRAND_IG;
-  const brand = pick(brandPool);
+  const brand = pick(isX ? DB.BRAND_X : DB.BRAND_IG);
   const mfw = pick(DB.MFW_VARIANTS);
   const name = DB.NAME;
 
@@ -397,37 +367,20 @@ function buildMainText(styleGroup, styleType, isAfter, isX) {
   const verb = pick(styleGroup.verbs);
   const phrase = pick(styleGroup.phrases);
   const ending = pick(styleGroup.endings);
-  const adverb = pick(DB.FORMAL.adverbs);
-  const connector = pick(DB.CONNECTORS);
-  let hypeVerb = verb, hypePhrase = phrase;
-  if (!isAfter && styleType === 1 && Math.random() < 0.5) hypeVerb = pick(DB.HYPE_EXTRA.fangirl_verbs);
-  if (!isAfter && styleType === 1 && Math.random() < 0.5) hypePhrase = pick(DB.HYPE_EXTRA.soft_phrases);
-  const useConnector = Math.random() < 0.35;
 
   let sentence = "";
-  let structChoice = Math.floor(Math.random() * 10);
-  if (isAfter) structChoice = [0, 3, 5, 7][(Math.random() * 4) | 0];
+  const choice = Math.floor(Math.random() * 5);
 
-  if (structChoice === 0) {
-    sentence = `${starter} ${name} ${verb} ${brand} at ${mfw}, ${phrase} - ${ending}`;
-  } else if (structChoice === 1) {
-    sentence = `${name} in ${brand} at ${mfw}, ${phrase}. ${starter} ${ending}`;
-  } else if (structChoice === 2) {
-    sentence = `${brand} x ${name} at ${mfw} is a revelation, ${phrase}! ${ending}`;
-  } else if (structChoice === 3) {
-    sentence = `${starter} ${name} ${verb} ${brand} at ${mfw} - ${phrase}, ${ending}`;
-  } else if (structChoice === 4) {
-    sentence = `${name}, ${phrase}. ${starter} ${verb} ${brand} at ${mfw}, ${ending}`;
-  } else if (structChoice === 5) {
-    sentence = `${starter} ${name} at ${mfw} in ${brand}: ${phrase}. ${ending}`;
-  } else if (structChoice === 6) {
-    sentence = `${name} ${verb} ${brand}, ${phrase}. ${starter} ${ending}`;
-  } else if (structChoice === 7) {
-    sentence = `${starter} ${name} ${verb} ${brand} at ${mfw} ${adverb}, ${phrase}. ${ending}`;
-  } else if (structChoice === 8) {
-    sentence = `${name} ${hypeVerb} ${brand} at ${mfw}. ${starter} ${hypePhrase} - ${ending}`;
+  if (choice === 0) {
+    sentence = `${starter} ${name} ${verb} ${brand} at ${mfw}, ${phrase} — ${ending}`;
+  } else if (choice === 1) {
+    sentence = `${name} ${verb} ${brand} from the front row at ${mfw}, ${phrase}. ${ending}`;
+  } else if (choice === 2) {
+    sentence = `${starter} ${name} in ${brand} at ${mfw}: ${phrase}. ${ending}`;
+  } else if (choice === 3) {
+    sentence = `${name} at ${mfw} with ${brand}, ${phrase}. ${starter} ${ending}`;
   } else {
-    sentence = `${useConnector ? connector + " " : ""}${name} ${verb} ${brand} at ${mfw}, ${phrase}... ${ending}`;
+    sentence = `${pick(DB.CONNECTORS)} ${name} ${verb} ${brand} at ${mfw}, ${phrase} — ${ending}`;
   }
 
   if (!sentence.includes(DB.NAME)) sentence = `${DB.NAME}, ${sentence}`;
@@ -435,42 +388,22 @@ function buildMainText(styleGroup, styleType, isAfter, isX) {
   return sentence;
 }
 
-// 按长度档位构造: tier0 (<=15词) / tier1 (16-25词) / tier2 (26-35词) / tier3 (>35词)
+// 严格字数区间控制：Tier 0 (<=15词) | Tier 1 (16-25词) | Tier 2 (26-35词)
 function buildTierText(tier, styleGroup, styleType, isAfter, isX) {
   const name = DB.NAME;
   const brand = pick(isX ? DB.BRAND_X : DB.BRAND_IG);
-  const mfw = pick(DB.MFW_VARIANTS);
 
   if (tier === 0) {
-    // 短句组装逻辑 (<=15个词)
-    if (Math.random() < 0.75) {
+    if (Math.random() < 0.7) {
       const B = DB.SHORT_BITS;
-      const adj = pick(B.adjectives), noun = pick(B.nouns),
-            v2 = pick(B.verbs2), obj = pick(B.objects), hv = pick(B.hypeBits);
-      let forms;
-      if (isAfter) {
-        forms = [
-          `${name} x ${brand}: what a journey.`,
-          `${name} and ${brand} - history made.`,
-          `${name} ${v2} ${obj} in ${brand}.`,
-          `${name} x ${brand}: a new chapter begins.`
-        ];
-      } else if (styleType === 0) {
-        forms = [
-          `${name} x ${brand}: ${adj} ${noun}.`,
-          `${name} ${v2} ${obj} in ${brand}.`,
-          `${name}, ${adj} in ${brand}.`,
-          `${brand} and ${name}: ${adj} ${noun}.`
-        ];
-      } else {
-        forms = [
-          `${name} ${hv} this ${brand} look.`,
-          `${name} in ${brand}? ${adj} ${noun}.`,
-          `${name} ${hv} ${obj}!`,
-          `${name} and ${brand} - ${adj} ${noun}!`
-        ];
-      }
-      let s = pick(forms);
+      const adj = pick(B.adj), noun = pick(B.noun), v = pick(B.verb), target = pick(B.target);
+      const templates = [
+        `${name} ${v} ${target} in ${brand}.`,
+        `${name} x ${brand}: ${adj} ${noun}.`,
+        `${adj} ${noun} from ${name} at ${brand}.`,
+        `${name} brings ${adj} ${noun} to ${brand}.`
+      ];
+      let s = pick(templates);
       if (!s.includes(name)) s = `${name}, ${s}`;
       if (!/gucci/i.test(s)) s = `${s} - for GUCCI.`;
       return s;
@@ -482,20 +415,11 @@ function buildTierText(tier, styleGroup, styleType, isAfter, isX) {
   }
 
   if (tier === 1) {
-    // 16-25词: 精简结构
+    const mfw = pick(DB.MFW_VARIANTS);
     const t = (Math.random() * 3) | 0;
-    let s;
-    if (t === 0) s = `${pick(styleGroup.starters)} ${name} ${pick(styleGroup.verbs)} ${brand} at ${mfw} - ${pick(styleGroup.endings)}`;
-    else if (t === 1) s = `${name} ${pick(styleGroup.verbs)} ${brand} at ${mfw}, ${pick(styleGroup.phrases)}.`;
-    else s = `${pick(styleGroup.starters)} ${name} in ${brand} at ${mfw}: ${pick(styleGroup.phrases)}.`;
-    return s;
-  }
-
-  if (tier === 3) {
-    // >35词: 完整扩展结构
-    let s = buildMainText(styleGroup, styleType, isAfter, isX);
-    if (wordCount(s) < 36) s = `${s} ${pick(styleGroup.starters)} ${pick(styleGroup.phrases)}.`;
-    return s;
+    if (t === 0) return `${pick(styleGroup.starters)} ${name} ${pick(styleGroup.verbs)} ${brand} at ${mfw} — ${pick(styleGroup.endings)}`;
+    if (t === 1) return `${name} ${pick(styleGroup.verbs)} ${brand} at ${mfw}, ${pick(styleGroup.phrases)}.`;
+    return `${pick(styleGroup.starters)} ${name} at ${mfw} in ${brand}: ${pick(styleGroup.phrases)}.`;
   }
 
   return buildMainText(styleGroup, styleType, isAfter, isX);
@@ -515,29 +439,18 @@ function buildGrammarText(isX, styleType, isAfter) {
     styleGroup = DB.HYPE; styleName = "Hype";
   }
 
-  // 核心优化比例：
-  // Tier 0 (<=15词): 55%
-  // Tier 1 (16-25词): 30% (此时 <=25词 达到 85%, 满足至少80%的目标)
-  // Tier 2 (26-35词): 10%
-  // Tier 3 (>35词): 5%
+  // 概率设置：Tier 0 (55%), Tier 1 (30%), Tier 2 (15%) -> 保证 ≤25 词占比至少 85%
   const r = Math.random();
-  let tier = isX
-    ? (r < 0.55 ? 0 : r < 0.85 ? 1 : 2)
-    : (r < 0.55 ? 0 : r < 0.85 ? 1 : r < 0.95 ? 2 : 3);
-  
-  const ranges = [[1, 15], [16, 25], [26, 35], [36, 999]];
+  let tier = r < 0.55 ? 0 : (r < 0.85 ? 1 : 2);
+  const ranges = [[1, 15], [16, 25], [26, 35]];
 
   let sentence = buildTierText(tier, styleGroup, styleType, isAfter, isX);
   let guard = 0;
-  while (guard++ < 50) {
+  while (guard++ < 40) {
     const w = wordCount(sentence);
-    const fit = tier === 3 ? w >= 36 : (w >= ranges[tier][0] && w <= ranges[tier][1]);
-    if (fit) break;
+    if (w >= ranges[tier][0] && w <= ranges[tier][1]) break;
     sentence = buildTierText(tier, styleGroup, styleType, isAfter, isX);
-    if (guard >= 50 && tier > 0) { // 兜底降级
-      tier--;
-      guard = 0;
-    }
+    if (guard >= 40 && tier > 0) { tier--; guard = 0; }
   }
 
   if (isX) {
@@ -600,7 +513,8 @@ function render() {
     const highlighted = item.text
       .replace(/PP Krit/g, m => `<b>${m}</b>`)
       .replace(/@?GUCCI|Gucci/g, m => `<b>${m}</b>`)
-      .replace(/MFW\d*|Milan Fashion Week/gi, m => `<b>${m}</b>`);
+      .replace(/MFW\d*|Milan Fashion Week/gi, m => `<b>${m}</b>`)
+      .replace(/Demna/g, m => `<b>${m}</b>`);
 
     const styleClass = item.styleName === "Elegant" ? "style-formal" : "style-hype";
 
