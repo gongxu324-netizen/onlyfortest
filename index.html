@@ -1,837 +1,661 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PP Engagement - GUCCI MILAN FW</title>
-    <!-- Google Fonts 可爱手写/卡通字体 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        softblue: '#7C9DAB',
-                        softpurple: '#A084CA',
-                        softpink: '#E8A0BF',
-                        softyellow: '#F7E398',
-                        softtext: '#3A3845',
-                        subtext: '#82808F',
-                        cream: '#F9F6F0',
-                        cardbg: '#FFFFFF',
-                        cardborder: '#EAE5D9'
-                    },
-                    fontFamily: {
-                        cute: ['Fredoka', 'Comfortaa', 'cursive', 'sans-serif'],
-                        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { 
-            background-color: #F9F6F0; 
-            color: #3A3845; 
-            font-family: system-ui, -apple-system, sans-serif;
-            background-image: radial-gradient(#EAE5D9 1.5px, transparent 1.5px);
-            background-size: 24px 24px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PP Krit × GUCCI — Anti-Bot Multi-Style Engine</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(145deg, #121513 0%, #1c231f 50%, #111312 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 24px 16px;
+    color: #e0e0e0;
+  }
+  .container {
+    width: 100%;
+    max-width: 560px;
+  }
+  h1 {
+    color: #dfc892;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+  .subtitle {
+    color: rgba(255, 255, 255, 0.55);
+    text-align: center;
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+  
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .tab {
+    padding: 10px 6px;
+    text-align: center;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 11.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+  }
+  .tab:hover {
+    background: rgba(255, 255, 255, 0.09);
+  }
+  .tab.active {
+    background: rgba(223, 200, 146, 0.12);
+    color: #dfc892;
+    border-color: rgba(223, 200, 146, 0.4);
+    font-weight: 600;
+  }
 
-        .font-cute-title {
-            font-family: 'Fredoka', cursive, sans-serif;
-        }
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #dfc892;
+    color: #121513;
+    font-size: 12.5px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 16px;
+  }
+  .btn:hover {
+    background: #ebd8ab;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+  .card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(223, 200, 146, 0.3);
+  }
+  .card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+  .card .index {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .card-tags {
+    display: flex;
+    gap: 4px;
+  }
+  .card .tag {
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  .tag.style-formal { background: rgba(149, 117, 205, 0.15); color: #9575cd; }
+  .tag.style-hype { background: rgba(100, 181, 246, 0.15); color: #64b5f6; }
 
-        @keyframes float-gentle {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-8px) rotate(2deg); }
-        }
+  .card .text {
+    font-size: 12.5px;
+    color: #e2e2e2;
+    line-height: 1.5;
+    word-break: break-word;
+    white-space: pre-line;
+  }
+  .card .text b {
+    color: #dfc892;
+    font-weight: 600;
+  }
+  .card .tip {
+    font-size: 10px;
+    color: #dfc892;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .card.copied {
+    background: rgba(76, 175, 80, 0.12);
+    border-color: rgba(76, 175, 80, 0.4);
+  }
+  .card.copied .tip {
+    opacity: 1;
+  }
 
-        @keyframes float-reverse {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-6px) rotate(-2deg); }
-        }
-
-        @keyframes pulse-slow {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .animate-float {
-            animation: float-gentle 4s ease-in-out infinite;
-        }
-
-        .animate-float-delayed {
-            animation: float-reverse 5s ease-in-out 1s infinite;
-        }
-
-        .animate-pulse-slow {
-            animation: pulse-slow 3s ease-in-out infinite;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #F9F6F0;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #D5CFC2;
-            border-radius: 999px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #A084CA;
-        }
-    </style>
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #dfc892;
+    color: #121513;
+    padding: 8px 18px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+</style>
 </head>
-<body class="min-h-screen p-3 sm:p-6 relative pb-28 bg-cream overflow-x-hidden selection:bg-softpink/30">
+<body>
+<div class="container">
+  <h1>✨ PP Krit × GUCCI — Anti-Bot Engine ✨</h1>
+  <p class="subtitle">Multi-Tone & Natural Style Alternating Generator</p>
+  
+  <div class="tabs">
+    <div class="tab active" id="tab-on-ig" data-mode="on-ig">ontheshow (IG/TT)</div>
+    <div class="tab" id="tab-on-x" data-mode="on-x">ontheshow (X)</div>
+    <div class="tab" id="tab-after-ig" data-mode="after-ig">aftertheshow (IG/TT)</div>
+    <div class="tab" id="tab-after-x" data-mode="after-x">aftertheshow (X)</div>
+  </div>
 
-    <!-- Top-Left Floating Decorative Bunny & Cloud -->
-    <div class="fixed top-3 left-3 md:top-6 md:left-8 z-0 pointer-events-none opacity-80 animate-float hidden sm:block">
-        <svg width="100" height="100" viewBox="0 0 120 120" fill="none">
-            <path d="M20 70 C 10 70, 5 55, 20 45 C 20 30, 40 25, 55 35 C 65 20, 85 25, 90 40 C 105 40, 110 55, 100 70 C 105 85, 85 90, 75 85 C 65 95, 40 95, 30 85 C 15 90, 10 80, 20 70 Z" fill="#FFFFFF" stroke="#EAE5D9" stroke-width="2.5"/>
-            <ellipse cx="60" cy="48" rx="14" ry="16" fill="#FFFFFF" stroke="#3A3845" stroke-width="2"/>
-            <ellipse cx="53" cy="28" rx="4" ry="12" fill="#FFFFFF" stroke="#3A3845" stroke-width="2"/>
-            <ellipse cx="53" cy="28" rx="2" ry="8" fill="#E8A0BF"/>
-            <ellipse cx="67" cy="28" rx="4" ry="12" fill="#FFFFFF" stroke="#3A3845" stroke-width="2"/>
-            <ellipse cx="67" cy="28" rx="2" ry="8" fill="#E8A0BF"/>
-            <circle cx="55" cy="48" r="1.5" fill="#3A3845"/>
-            <circle cx="65" cy="48" r="1.5" fill="#3A3845"/>
-            <circle cx="51" cy="52" r="2.5" fill="#E8A0BF" opacity="0.6"/>
-            <circle cx="69" cy="52" r="2.5" fill="#E8A0BF" opacity="0.6"/>
-            <path d="M58 52 Q60 54 62 52" stroke="#3A3845" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-    </div>
+  <button class="btn" id="refreshBtn">🎲 Generate New Batch (8 Unique Items)</button>
+  <div id="list"></div>
+</div>
 
-    <!-- Bottom-Left Decorative Bunny Resting on Pillows -->
-    <div class="fixed bottom-4 left-4 z-0 pointer-events-none opacity-85 animate-float-delayed hidden lg:block">
-        <svg width="130" height="110" viewBox="0 0 130 110" fill="none">
-            <rect x="20" y="55" width="90" height="40" rx="18" fill="#A084CA" opacity="0.25" stroke="#A084CA" stroke-width="2"/>
-            <circle cx="20" cy="75" r="4" fill="#A084CA"/>
-            <circle cx="110" cy="75" r="4" fill="#A084CA"/>
-            <ellipse cx="65" cy="52" rx="22" ry="18" fill="#FFFFFF" stroke="#3A3845" stroke-width="2"/>
-            <ellipse cx="48" cy="42" rx="10" ry="6" fill="#FFFFFF" stroke="#3A3845" stroke-width="2" transform="rotate(-20 48 42)"/>
-            <ellipse cx="48" cy="42" rx="7" ry="3" fill="#E8A0BF" transform="rotate(-20 48 42)"/>
-            <ellipse cx="80" cy="40" rx="10" ry="6" fill="#FFFFFF" stroke="#3A3845" stroke-width="2" transform="rotate(20 80 40)"/>
-            <ellipse cx="80" cy="40" rx="7" ry="3" fill="#E8A0BF" transform="rotate(20 80 40)"/>
-            <path d="M57 54 Q60 57 63 54" stroke="#3A3845" stroke-width="2" stroke-linecap="round"/>
-            <path d="M67 54 Q70 57 73 54" stroke="#3A3845" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="53" cy="57" r="3" fill="#E8A0BF" opacity="0.6"/>
-            <circle cx="77" cy="57" r="3" fill="#E8A0BF" opacity="0.6"/>
-            <text x="88" y="32" font-family="sans-serif" font-weight="bold" font-size="12" fill="#A084CA">Z</text>
-            <text x="96" y="22" font-family="sans-serif" font-weight="bold" font-size="10" fill="#A084CA">z</text>
-            <text x="102" y="14" font-family="sans-serif" font-weight="bold" font-size="8" fill="#A084CA">z</text>
-        </svg>
-    </div>
+<div class="toast" id="toast">Copied to Clipboard ✓</div>
 
-    <!-- Header Section -->
-    <header class="max-w-6xl mx-auto flex justify-between items-center mb-4 border-b-2 border-dashed border-[#EAE5D9] pb-3 relative z-10">
-        <div class="flex items-center gap-2.5">
-            <div class="p-2 bg-white rounded-2xl shadow-sm border border-cardborder flex items-center justify-center">
-                <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
-                    <path d="M20 34 V 22" stroke="#7C9DAB" stroke-width="3" stroke-linecap="round"/>
-                    <path d="M20 28 C 12 26, 10 32, 12 34" stroke="#7C9DAB" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-                    <path d="M20 26 C 28 24, 30 30, 28 32" stroke="#7C9DAB" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-                    <path d="M12 14 C 12 22, 20 24, 20 24 C 20 24, 28 22, 28 14 C 28 10, 24 8, 12 10, 12 14 Z" fill="#E8A0BF" stroke="#3A3845" stroke-width="2"/>
-                </svg>
-            </div>
-            <div>
-                <div class="flex items-center gap-2">
-                    <h1 class="text-xl sm:text-2xl font-cute-title font-bold tracking-wider text-[#7C9DAB]">PP ENGAGEMENT</h1>
-                    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#E8A0BF]/20 text-[#E8A0BF] border border-[#E8A0BF]/40">
-                        🎀 Milan FW
-                    </span>
-                </div>
-                <p class="text-[11px] sm:text-xs text-[#82808F] font-medium mt-0.5 flex items-center gap-1">
-                    <span>GUCCI MILAN FASHION WEEK</span>
-                    <span class="text-softpurple">✦</span>
-                    <span>FAN BOOSTING HUB</span>
-                </p>
-            </div>
-        </div>
-    </header>
+<script>
+const DB = {
+  // Strictly locked name
+  NAME: "PP Krit",
+  BRAND_IG: ["GUCCI", "Gucci"],
+  BRAND_X: ["GUCCI", "Gucci", "@gucci"],
+  MFW_VARIANTS: ["MFW", "Milan Fashion Week", "MFW26"],
 
-    <main class="max-w-6xl mx-auto space-y-5 lg:pr-88 relative z-10">
+  // Style 1: High-Fashion Elegant
+  FORMAL: {
+    starters: [
+      "Breathtaking appearance from", "A true embodiment of elegance,", "Exuding pure sophistication,", 
+      "Sensational high-fashion moment for", "Redefining modern luxury,", "An absolutely captivating vision,", 
+      "Grace and grandeur personified in", "A mesmerizing display of haute couture from", "The epitome of refined glamour,", 
+      "Dressed to absolute perfection,", "A portrait of timeless beauty,", "Commanding attention with every stride,", 
+      "Refined, radiant, and utterly unforgettable,", "An evening of pure elegance courtesy of", "Sculpted by light and tailored to perfection,", 
+      "Every seam speaks of quiet luxury on", "Under the Milanese lights, nothing compares to", "A vision in monochrome and grace,", 
+      "The camera simply cannot do justice to", "Sophistication looks effortless on", "Unrivaled presence from", 
+      "A masterclass in modern sartorial art with", "Radiating pure royalty,", "An ethereal moment defined by"
+    ],
+    adverbs: [
+      "effortlessly", "gracefully", "with quiet confidence", "in truly remarkable fashion", 
+      "as only he can", "with an almost cinematic grace", "like it was tailored yesterday, just for him", 
+      "with subtle mastery", "impeccably", "with magnetic poise"
+    ],
+    verbs: [
+      "presents flawless tailoring in", "commands the event effortlessly wearing", "showcases remarkable poise in", 
+      "embodies timeless glamour with", "radiates understated luxury in", "delivers a striking sartorial statement in", 
+      "elevates the entire front row wearing", "captivates every lens in", "carries the heritage of the house with grace in", 
+      "drapes himself in quiet luxury wearing", "interprets modern couture flawlessly in", "wears with an air of aristocratic ease",
+      "defines contemporary elegance in", "steals the entire spotlight wearing", "transforms the runway ambiance in"
+    ],
+    phrases: [
+      "with impeccable silhouette and refined aura", "highlighting exquisite facial features and regal stature", 
+      "serving ethereal beauty with a commanding presence", "a masterclass in high-fashion aesthetics and charm", 
+      "with every detail exquisitely considered", "where classic craftsmanship meets modern allure", 
+      "a seamless fusion of artistry and elegance", "with poise that could silence an entire runway", 
+      "the fabric falls as if it were made solely for him", "a study in proportion, texture, and quiet confidence", 
+      "grace woven into every thread and gesture", "beauty that feels both classic and strikingly contemporary",
+      "captivating the eyes of global fashion elite", "an effortlessly iconic silhouette"
+    ],
+    endings: [
+      "at Milan Fashion Week.", "for Gucci.", "an absolute highlight of the show.", "defining true elegance.", 
+      "a moment of pure couture poetry.", "reinforcing his fashion icon status.", "nothing short of extraordinary.", 
+      "destined for the best-dressed lists.", "a triumph of style and substance.", "the very definition of la dolce vita.", 
+      "leaving an indelible mark on the season.", "elegance in its most authentic form.", "pure poetry in motion.", 
+      "the kind of moment fashion history remembers.", "impossibly chic, impossibly him.", "a love letter to Italian craftsmanship.", 
+      "simply beyond compare.", "setting a new standard for runway luxury."
+    ]
+  },
 
-        <!-- Progress Counter Section -->
-        <section class="bg-cardbg p-3.5 sm:p-4 rounded-2xl border-2 border-cardborder flex flex-col md:flex-row justify-between items-center gap-3 shadow-sm relative overflow-hidden">
-            <div class="absolute -right-2 -bottom-2 opacity-15 pointer-events-none">
-                <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
-                    <path d="M50 20 C 30 20, 15 35, 25 70 C 30 85, 50 95, 50 95 C 50 95, 70 85, 75 70 C 85 35, 70 20, 50 20 Z" fill="#E8A0BF"/>
-                    <path d="M40 22 C 45 10, 55 10, 60 22 C 55 25, 45 25, 40 22 Z" fill="#7C9DAB"/>
-                </svg>
-            </div>
+  // 连接/转折词, 随机注入
+  CONNECTORS: ["honestly,", "and yet,", "somehow,", "truthfully,", "and just like that,", "needless to say,", "without question,", "undeniably,"],
 
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-[#F9F6F0] rounded-xl border border-[#EAE5D9] flex items-center justify-center shrink-0">
-                    <svg width="32" height="32" viewBox="0 0 50 50" fill="none">
-                        <path d="M10 25 C 10 40, 16 44, 25 44 C 34 44, 40 40, 40 25 Z" fill="#A084CA" opacity="0.3" stroke="#3A3845" stroke-width="1.8"/>
-                        <path d="M40 28 C 46 28, 46 36, 40 38" stroke="#3A3845" stroke-width="1.8" fill="none"/>
-                        <ellipse cx="20" cy="14" rx="3.5" ry="9" fill="#FFFFFF" stroke="#3A3845" stroke-width="1.5"/>
-                        <ellipse cx="20" cy="14" rx="1.8" ry="6" fill="#E8A0BF"/>
-                        <ellipse cx="30" cy="14" rx="3.5" ry="9" fill="#FFFFFF" stroke="#3A3845" stroke-width="1.5"/>
-                        <ellipse cx="30" cy="14" rx="1.8" ry="6" fill="#E8A0BF"/>
-                        <circle cx="25" cy="23" r="10" fill="#FFFFFF" stroke="#3A3845" stroke-width="1.5"/>
-                        <circle cx="21" cy="23" r="1.2" fill="#3A3845"/>
-                        <circle cx="29" cy="23" r="1.2" fill="#3A3845"/>
-                        <circle cx="18" cy="25" r="2" fill="#E8A0BF" opacity="0.6"/>
-                        <circle cx="32" cy="25" r="2" fill="#E8A0BF" opacity="0.6"/>
-                        <path d="M24 25 Q25 26.5 26 25" stroke="#3A3845" stroke-width="1.2"/>
-                    </svg>
-                </div>
-                <div>
-                    <h2 class="text-xs sm:text-sm font-bold text-[#3A3845] flex items-center gap-1.5">
-                        Posts Reviewed (打卡进度)
-                        <span class="text-[10px] bg-[#F7E398] text-[#3A3845] font-semibold px-1.5 py-0.2 rounded-full border border-yellow-300">Auto Saved</span>
-                    </h2>
-                    <p class="text-[11px] text-[#82808F] mt-0.5">点击下方链接跳转打卡，已完成任务会自动保存在浏览器中哦 ~</p>
-                </div>
-            </div>
+  // Style 2: Fan Hype
+  HYPE: {
+    starters: [
+      "OMG!!", "Look at him,", "I cannot breathe,", "Absolutely stunning,", "The main character is here,", 
+      "My heart can't handle this!!", "STOP EVERYTHING,", "Forever my favorite person,", "This is not a drill,", 
+      "He's just too precious,", "SPEECHLESS,", "CAN WE TALK ABOUT THIS,", "He really did that,", 
+      "HE SERVED AGAIN,", "Absolute perfection,"
+    ],
+    verbs: [
+      "is glowing so bright in", "is making everyone take photos in", "is taking over the entire timeline in", 
+      "is serving pure perfection in", "is shining like a whole constellation in", "is blessing our feeds in", 
+      "is out-visualing everyone in", "is pure art in motion in", "is breaking the internet wearing", 
+      "is looking like a literal angel in", "is dominating every single feed in"
+    ],
+    phrases: [
+      "such a handsome face and perfect body line", "his aura is literally out of this world", 
+      "that heavenly glow and gorgeous smile", "serving top-tier face card and unmatched elegance", 
+      "every angle is a magazine cover, every step is a statement", "the world truly isn't ready for this level of beauty", 
+      "he radiates warmth and star power at once", "one look and the whole timeline melted", 
+      "unreal visuals that leave everyone breathless", "literally the prettiest human being alive"
+    ],
+    endings: [
+      "so proud of him!", "he killed this look!", "can't take my eyes off!", "we love to see it!", 
+      "protect him at all costs!", "our brightest star!", "he deserves the entire world!", 
+      "always and forever supporting him!", "my heart is so full!", "the world is truly his runway!", 
+      "he was born for this moment!", "i would frame every single photo!", "tears in my eyes, pride in my heart!", 
+      "our superstar, our pride!", "this look lives in my mind rent free!", "he never misses, not once!", 
+      "simply the most beautiful person inside and out!", "give him everything right now!"
+    ]
+  },
 
-            <div class="flex items-center gap-3 w-full md:w-auto justify-between md:justify-end border-t md:border-t-0 border-[#EAE5D9] pt-2 md:pt-0">
-                <div class="flex flex-col text-right">
-                    <span class="text-[10px] text-[#82808F] font-semibold">Completed</span>
-                    <span id="progress-text" class="text-xl font-black text-[#A084CA] tracking-wider">0 / 0</span>
-                </div>
-                <button onclick="resetProgress()" class="text-xs bg-[#F9F6F0] hover:bg-red-50 hover:text-red-500 hover:border-red-200 px-2.5 py-1.5 rounded-lg text-[#82808F] border border-[#EAE5D9] font-medium transition flex items-center gap-1 active:scale-95 shadow-sm">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-                    Reset
-                </button>
-            </div>
-        </section>
+  // Hype 风格专属补充
+  HYPE_EXTRA: {
+    interjections: ["AAAAHHH", "be so fr right now", "not the way", "yall", "i'm actually shaking", "excuse me while I pass away", "the audacity of being this beautiful", "REAL KING SHIT"],
+    fangirl_verbs: ["has me on my knees for", "is bias-wrecking everyone in", "has the whole fandom screaming over", "is collecting everyone's hearts in", "just ended every other look with", "is completely resetting fashion in"],
+    soft_phrases: ["he looks like the softest dream", "that gentle smile could heal anything", "a whole warm hug in human form", "precious beyond words", "his kindness literally shines through", "a pure angel on earth"]
+  },
 
-        <!-- 双语提示文本框 -->
-        <div class="w-full bg-[#F4F1EA] border-2 border-dashed border-[#D5CFC2] rounded-2xl p-2.5 sm:p-3 text-[#82808F] text-[10px] sm:text-[11px] leading-relaxed shadow-sm">
-            <div class="font-bold text-[#3A3845] mb-1 flex items-center gap-1 text-xs">
-                <span>⚠️</span>
-                <span>🚨Caution🚨 do not behave like bots, or your account won’t last long：</span>
-            </div>
-            <ol class="list-decimal list-inside space-y-0.5 font-medium pl-1">
-                <li>Change comments each time 每次都更换评论内容</li>
-                <li>Pause a little before posting next comment发布下一条评论前稍作停顿</li>
-                <li>Don’t reply too much on one post; switch to other posts then come back不要在一条帖子下大量回复，切换浏览其他帖子后再回来</li>
-                <li>Let your IG account rest occasionally; avoid prolonged repeated actions间歇性让 Ins 账号休息，不要长时间持续同类操作</li>
-                <li>While one account rests, use another IG account and follow rules 1‑4 一个账号休息期间，切换新 Ins 账号，重复执行第 1‑4 条</li>
-            </ol>
-        </div>
+  // 短句库 (<15 单词，进一步大大增加选词)
+  SHORT_FORMAL: [
+    "PP Krit wears GUCCI like poetry.", "GUCCI has found its icon: PP Krit.", "PP Krit, pure GUCCI elegance.",
+    "In GUCCI, PP Krit is unmatched.", "PP Krit commands GUCCI couture.", "GUCCI tailoring was made for PP Krit.",
+    "PP Krit turns GUCCI into poetry.", "Nothing rivals PP Krit in GUCCI.", "PP Krit defines modern GUCCI luxury.",
+    "GUCCI shines brighter with PP Krit.", "PP Krit in GUCCI: simply perfect.", "Every GUCCI thread suits PP Krit.",
+    "PP Krit elevates every GUCCI look.", "GUCCI's finest moment: PP Krit.", "PP Krit embodies the GUCCI spirit.",
+    "With PP Krit, GUCCI feels eternal.", "PP Krit and GUCCI: pure Milan magic.", "A front-row king: PP Krit in GUCCI.",
+    "GUCCI tailoring finds its muse in PP Krit.", "PP Krit carries GUCCI with quiet grace.", "Milan bows to PP Krit in GUCCI.",
+    "PP Krit: the finest note in GUCCI's symphony.", "Every GUCCI look is safer in PP Krit's hands.", "PP Krit makes couture feel personal.",
+    "Pure Italian luxury redefined by PP Krit for GUCCI.", "PP Krit in GUCCI is pure haute couture.", "Unstoppable elegance: PP Krit in GUCCI.",
+    "GUCCI's ultimate muse is PP Krit.", "Subtle power and grace: PP Krit for GUCCI.", "PP Krit owns the GUCCI runway."
+  ],
 
-        <!-- Cute Dashed Divider with Bow -->
-        <div class="flex items-center justify-center my-3 gap-2">
-            <div class="h-0.5 flex-1 border-b-2 border-dashed border-[#EAE5D9]"></div>
-            <svg width="22" height="16" viewBox="0 0 30 22" fill="none">
-                <path d="M15 8 C 8 0, 0 4, 3 12 C 6 18, 13 12, 15 10 C 17 12, 24 18, 27 12 C 30 4, 22 0, 15 8 Z" fill="#E8A0BF" stroke="#3A3845" stroke-width="1.5"/>
-                <circle cx="15" cy="10" r="3" fill="#A084CA" stroke="#3A3845" stroke-width="1.5"/>
-            </svg>
-            <div class="h-0.5 flex-1 border-b-2 border-dashed border-[#EAE5D9]"></div>
-        </div>
+  // aftertheshow 风格: 看秀之旅大放异彩 + 展望未来合作
+  AFTER: {
+    starters: [
+      "What an extraordinary journey,", "From the front row to every front page,", "A dazzling chapter in fashion history,", 
+      "A show-stopping trip in Milan,", "An unforgettable fashion week,", "A triumphant Milan adventure,",
+      "Reflecting on a monumental fashion week,", "A magical Milan season concluded with"
+    ],
+    verbs: [
+      "dazzled in", "owned every moment in", "shone brighter than every spotlight alongside", 
+      "made headlines worldwide in", "left the fashion world speechless in", "proved himself the undeniable face of",
+      "created an unforgettable sensation in", "wrote a new fashion legacy with"
+    ],
+    phrases: [
+      "with glowing coverage from Vogue, Elle and WWD", "as cameras chased his every breathtaking look", 
+      "the industry's eyes now fixed on his next move", "cementing his status as fashion's most-watched star", 
+      "with praise pouring in from across the fashion capitals", "his natural chemistry with the house shining through",
+      "taking global fashion media by storm", "setting the standard for future collaborations"
+    ],
+    endings: [
+      "the future with GUCCI looks brighter than ever.", "we cannot wait for his next chapter with Demna and the house.", 
+      "excited to see what he and Demna create together next.", "this is only the beginning of a beautiful partnership.", 
+      "the best is yet to come for this iconic duo.", "a new fashion journey awaits, and we are ready.",
+      "forever inspired by this legendary partnership.", "an extraordinary chapter written in fashion history."
+    ]
+  },
 
-        <!-- PP KRIT IG Section -->
-        <section class="space-y-2">
-            <div class="flex items-center justify-between">
-                <h3 class="text-xs font-bold text-[#3A3845] uppercase tracking-wider flex items-center gap-1.5 bg-white px-2.5 py-1 rounded-full border border-cardborder shadow-sm">
-                    <span class="w-2.5 h-2.5 rounded-full bg-[#7C9DAB] inline-block animate-pulse-slow"></span> 
-                    <span>PP KRIT OFFICIAL IG</span>
-                    <span class="text-[10px] text-[#82808F] font-normal font-sans">(Brand & Personal)</span>
-                </h3>
-                <span class="text-[10px] text-[#82808F]">🍓 Official Channel</span>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-2" id="brand-posts"></div>
-        </section>
+  // aftertheshow 短句库 (5-15词)
+  SHORT_AFTER: [
+    "PP Krit's GUCCI journey was pure magic.", "What a triumph for PP Krit and GUCCI.", "PP Krit owned every GUCCI headline.",
+    "The world watched PP Krit shine for GUCCI.", "PP Krit and GUCCI: a match made in Milan.", "Every camera loved PP Krit at GUCCI.",
+    "PP Krit's GUCCI moment captivated fashion media worldwide.", "Fashion's new golden boy: PP Krit for GUCCI.",
+    "The fashion world can't stop talking about PP Krit's GUCCI show.", "Milan belonged to PP Krit and GUCCI.",
+    "PP Krit's GUCCI takeover was simply iconic.", "All eyes were on PP Krit at GUCCI.", "PP Krit made GUCCI history this week.",
+    "The future looks dazzling for PP Krit and GUCCI.", "Next up: more magic from PP Krit, GUCCI and Demna.",
+    "A new GUCCI chapter begins for PP Krit.", "PP Krit left Milan with every headline.", "What a week for PP Krit and GUCCI.",
+    "PP Krit's GUCCI takeover has only begun.", "Milan will remember PP Krit's name.", "PP Krit turned a show trip into history.",
+    "The next GUCCI chapter belongs to PP Krit.", "PP Krit's fashion journey is just getting started.", "History made: PP Krit for GUCCI in Milan.",
+    "An unforgettable Milan show for PP Krit and GUCCI.", "PP Krit and GUCCI conquered Milan effortlessly."
+  ],
 
-        <!-- GUCCI OFFICIAL Section -->
-        <section class="space-y-2">
-            <div class="flex items-center justify-between">
-                <h3 class="text-xs font-bold text-[#3A3845] uppercase tracking-wider flex items-center gap-1.5 bg-white px-2.5 py-1 rounded-full border border-cardborder shadow-sm">
-                    <span class="w-2.5 h-2.5 rounded-full bg-[#F7E398] inline-block animate-pulse-slow"></span> 
-                    <span>GUCCI OFFICIAL</span>
-                </h3>
-                <span class="text-[10px] text-[#82808F]">👜 Luxury Brand</span>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-2" id="gucci_official-posts"></div>
-        </section>
+  SHORT_HYPE: [
+    "PP Krit ate this GUCCI look.", "GUCCI never looked this good. PP Krit!", "PP Krit in GUCCI broke me.",
+    "This GUCCI fit on PP Krit? Perfect.", "PP Krit owns every GUCCI frame.", "GUCCI found its king: PP Krit.",
+    "PP Krit makes GUCCI look effortless.", "No one does GUCCI like PP Krit.", "PP Krit and GUCCI: a perfect match.",
+    "GUCCI could never miss with PP Krit.", "PP Krit's GUCCI era is everything.", "Screaming over PP Krit in GUCCI!",
+    "PP Krit turns GUCCI into art.", "GUCCI hit the jackpot with PP Krit.", "PP Krit in GUCCI is my religion.",
+    "This is PP Krit's GUCCI world.", "PP Krit in GUCCI? I'm unwell.", "GUCCI said let's give PP Krit everything.",
+    "PP Krit just rewrote the GUCCI lookbook.", "No thoughts, just PP Krit in GUCCI.", "PP Krit said GUCCI is mine now.",
+    "GUCCI could never top this. PP Krit did.", "PP Krit's GUCCI fit broke my whole feed.", "Protect PP Krit in GUCCI at all costs.",
+    "PP Krit serving pure GUCCI perfection!", "Obsessed with PP Krit in GUCCI!", "PP Krit in GUCCI is top tier."
+  ],
 
-        <!-- Cute Dashed Divider with Heart -->
-        <div class="flex items-center justify-center my-3 gap-2">
-            <div class="h-0.5 flex-1 border-b-2 border-dashed border-[#EAE5D9]"></div>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#A084CA" stroke="#3A3845" stroke-width="1.5"/>
-            </svg>
-            <div class="h-0.5 flex-1 border-b-2 border-dashed border-[#EAE5D9]"></div>
-        </div>
+  // 组合式短句部件: 极大地增加了可用词汇
+  SHORT_BITS: {
+    adjectives: ["pure", "absolute", "quiet", "modern", "timeless", "effortless", "radiant", "impeccable", "stunning", "unmatched", "understated", "breathtaking", "dreamy", "polished", "supreme", "flawless", "iconic", "exquisite"],
+    nouns: ["elegance", "luxury", "poetry", "perfection", "grace", "magic", "sophistication", "glamour", "couture", "brilliance", "charm", "allure", "artistry", "majesty"],
+    verbs2: ["owns", "elevates", "redefines", "embodies", "commands", "transforms", "lights up", "anchors", "completes", "graces", "defines", "captures"],
+    objects: ["every frame", "the front row", "Milan", "the runway", "the night", "every lens", "the season", "the silhouette", "the spotlight", "our feeds"],
+    hypeBits: ["ate", "snapped", "served", "delivered", "devoured", "conquered", "owned", "shut down", "slayed"]
+  }
+};
 
-        <!-- Media & KOL (ONLYPP) Section -->
-        <section class="space-y-2">
-            <div class="flex items-center justify-between">
-                <h3 class="text-xs font-bold text-[#3A3845] uppercase tracking-wider flex items-center gap-1.5 bg-white px-2.5 py-1 rounded-full border border-cardborder shadow-sm">
-                    <span class="w-2.5 h-2.5 rounded-full bg-[#E8A0BF] inline-block animate-pulse-slow"></span> 
-                    <span>Media & KOL (ONLYPP)</span>
-                </h3>
-                <span class="text-[10px] text-[#82808F]">🎀 High Priority</span>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-2" id="media_onlypp-posts"></div>
-        </section>
+const X_TAGS = "PP KRIT X GUCCI MFW26\n#GUCCISS27xPPKRIT\n#GucciTheStoreShow\n#Gucci #PPKritt #MFW\n@gucci @ppkritt";
+const X_LIMIT = 280;
+const PAGE_SIZE = 8;
 
-        <!-- PPENT Section -->
-        <section class="space-y-2">
-            <div class="flex items-center justify-between">
-                <h3 class="text-xs font-bold text-[#3A3845] uppercase tracking-wider flex items-center gap-1.5 bg-white px-2.5 py-1 rounded-full border border-cardborder shadow-sm">
-                    <span class="w-2.5 h-2.5 rounded-full bg-[#A084CA] inline-block animate-pulse-slow"></span> 
-                    <span>PPENT</span>
-                </h3>
-                <span class="text-[10px] text-[#82808F]">🏢 Official Entertainment</span>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-2" id="ppent_posts-posts"></div>
-        </section>
+// ===== 跨刷新去重 =====
+const SEEN_KEY = "ppgen_seen_v1";
+const SEEN_CAP = 800;
+function loadSeen() {
+  try {
+    const raw = sessionStorage.getItem(SEEN_KEY);
+    return raw ? new Set(JSON.parse(raw)) : new Set();
+  } catch (e) { return new Set(); }
+}
+function saveSeen(set) {
+  try {
+    const arr = Array.from(set);
+    sessionStorage.setItem(SEEN_KEY, JSON.stringify(arr.slice(-SEEN_CAP)));
+  } catch (e) {}
+}
 
-        <!-- Media & KOL (BKPP) Section -->
-        <section class="space-y-2">
-            <div class="flex items-center justify-between">
-                <h3 class="text-xs font-bold text-[#3A3845] uppercase tracking-wider flex items-center gap-1.5 bg-white px-2.5 py-1 rounded-full border border-cardborder shadow-sm">
-                    <span class="w-2.5 h-2.5 rounded-full bg-[#A084CA] inline-block animate-pulse-slow"></span> 
-                    <span>Media & KOL (BKPP)</span>
-                </h3>
-                <span class="text-[10px] text-[#82808F]">✨ Duo Coverage</span>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-2" id="media_bkpp-posts"></div>
-        </section>
+const list = document.getElementById("list");
+const toast = document.getElementById("toast");
+let toastTimer = null;
+let currentMode = "on-ig";
 
-        <!-- Cute Dashed Divider with Star -->
-        <div class="flex items-center justify-center my-3 gap-2">
-            <div class="h-0.5 flex-1 border-b-2 border-dashed border-[#EAE5D9]"></div>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#F7E398" stroke="#3A3845" stroke-width="1.5" stroke-linejoin="round"/>
-            </svg>
-            <div class="h-0.5 flex-1 border-b-2 border-dashed border-[#EAE5D9]"></div>
-        </div>
+const pick = arr => arr[(Math.random() * arr.length) | 0];
 
-        <!-- TIKTOK Section -->
-        <section class="space-y-2">
-            <div class="flex items-center justify-between">
-                <h3 class="text-xs font-bold text-[#3A3845] uppercase tracking-wider flex items-center gap-1.5 bg-white px-2.5 py-1 rounded-full border border-cardborder shadow-sm">
-                    <span class="w-2.5 h-2.5 rounded-full bg-[#E8A0BF] inline-block animate-pulse-slow"></span> 
-                    <span>TIKTOK</span>
-                </h3>
-                <span class="text-[10px] text-[#82808F]">🎵 Viral Videos</span>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-2" id="tiktok_posts-posts"></div>
-        </section>
+function buildMainText(styleGroup, styleType, isAfter, isX) {
+  const brandPool = isX ? DB.BRAND_X : DB.BRAND_IG;
+  const brand = pick(brandPool);
+  const mfw = pick(DB.MFW_VARIANTS);
+  const name = DB.NAME;
 
-        <!-- Cute Dashed Divider with Flower -->
-        <div class="flex items-center justify-center my-3 gap-2">
-            <div class="h-0.5 flex-1 border-b-2 border-dashed border-[#EAE5D9]"></div>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C9.5 2 7.5 4 7.5 6.5C7.5 7.5 7.8 8.4 8.3 9.1C6 9.6 4.5 11.6 4.5 14C4.5 16.8 6.7 19 9.5 19C10.5 19 11.4 18.7 12 18.2C12.6 18.7 13.5 19 14.5 19C17.3 19 19.5 16.8 19.5 14C19.5 11.6 18 9.6 15.7 9.1C16.2 8.4 16.5 7.5 16.5 6.5C16.5 4 14.5 2 12 2Z" fill="#7C9DAB" stroke="#3A3845" stroke-width="1.5"/>
-                <circle cx="12" cy="11" r="2" fill="#F7E398" stroke="#3A3845" stroke-width="1"/>
-            </svg>
-            <div class="h-0.5 flex-1 border-b-2 border-dashed border-[#EAE5D9]"></div>
-        </div>
+  const starter = pick(styleGroup.starters);
+  const verb = pick(styleGroup.verbs);
+  const phrase = pick(styleGroup.phrases);
+  const ending = pick(styleGroup.endings);
+  const adverb = pick(DB.FORMAL.adverbs);
+  const connector = pick(DB.CONNECTORS);
+  let hypeVerb = verb, hypePhrase = phrase;
+  if (!isAfter && styleType === 1 && Math.random() < 0.5) hypeVerb = pick(DB.HYPE_EXTRA.fangirl_verbs);
+  if (!isAfter && styleType === 1 && Math.random() < 0.5) hypePhrase = pick(DB.HYPE_EXTRA.soft_phrases);
+  const useConnector = Math.random() < 0.35;
 
-        <!-- X (Twitter) Section -->
-        <section class="space-y-2">
-            <div class="flex items-center justify-between">
-                <h3 class="text-xs font-bold text-[#3A3845] uppercase tracking-wider flex items-center gap-1.5 bg-white px-2.5 py-1 rounded-full border border-cardborder shadow-sm">
-                    <span class="w-2.5 h-2.5 rounded-full bg-[#3A3845] inline-block animate-pulse-slow"></span> 
-                    <span>X (Twitter)</span>
-                </h3>
-                <span class="text-[10px] text-[#82808F]">🐦 Trend Boosting</span>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-2" id="x_posts-posts"></div>
-        </section>
+  let sentence = "";
+  let structChoice = Math.floor(Math.random() * 10);
+  if (isAfter) structChoice = [0, 3, 5, 7][(Math.random() * 4) | 0];
 
-    </main>
+  if (structChoice === 0) {
+    sentence = `${starter} ${name} ${verb} ${brand} at ${mfw}, ${phrase} - ${ending}`;
+  } else if (structChoice === 1) {
+    sentence = `${name} in ${brand} at ${mfw}, ${phrase}. ${starter} ${ending}`;
+  } else if (structChoice === 2) {
+    sentence = `${brand} x ${name} at ${mfw} is a revelation, ${phrase}! ${ending}`;
+  } else if (structChoice === 3) {
+    sentence = `${starter} ${name} ${verb} ${brand} at ${mfw} - ${phrase}, ${ending}`;
+  } else if (structChoice === 4) {
+    sentence = `${name}, ${phrase}. ${starter} ${verb} ${brand} at ${mfw}, ${ending}`;
+  } else if (structChoice === 5) {
+    sentence = `${starter} ${name} at ${mfw} in ${brand}: ${phrase}. ${ending}`;
+  } else if (structChoice === 6) {
+    sentence = `${name} ${verb} ${brand}, ${phrase}. ${starter} ${ending}`;
+  } else if (structChoice === 7) {
+    sentence = `${starter} ${name} ${verb} ${brand} at ${mfw} ${adverb}, ${phrase}. ${ending}`;
+  } else if (structChoice === 8) {
+    sentence = `${name} ${hypeVerb} ${brand} at ${mfw}. ${starter} ${hypePhrase} - ${ending}`;
+  } else {
+    sentence = `${useConnector ? connector + " " : ""}${name} ${verb} ${brand} at ${mfw}, ${phrase}... ${ending}`;
+  }
 
-    <!-- Floating Captions Box -->
-    <aside id="caption-widget" class="fixed top-4 right-4 sm:top-6 sm:right-6 w-[calc(100vw-2rem)] sm:w-80 bg-white/95 backdrop-blur-md border-2 border-[#7C9DAB]/40 rounded-3xl p-4 shadow-xl z-50 transition-all duration-300">
-        <div class="absolute -top-3 left-6 bg-[#F7E398] border border-yellow-300 text-[#3A3845] text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm flex items-center gap-1">
-            <span>✨ Comment Helper</span>
-        </div>
+  if (!sentence.includes(DB.NAME)) sentence = `${DB.NAME}, ${sentence}`;
+  if (!/gucci/i.test(sentence)) sentence = `${sentence} for Gucci`;
+  return sentence;
+}
 
-        <div class="flex justify-between items-center mb-3 pt-1">
-            <div class="flex items-center gap-1.5 text-xs font-bold text-[#3A3845]">
-                <span class="text-[#A084CA] text-sm">🐇</span> GUCCI Milan FW Captions
-            </div>
-            <button onclick="toggleCaptionWidget()" class="text-[#82808F] hover:text-[#3A3845] bg-[#F9F6F0] hover:bg-[#EAE5D9] w-6 h-6 rounded-full flex items-center justify-center text-xs transition">✕</button>
-        </div>
+// 按长度档位构造: tier0 (<=15词) / tier1 (16-25词) / tier2 (26-35词) / tier3 (>35词)
+function buildTierText(tier, styleGroup, styleType, isAfter, isX) {
+  const name = DB.NAME;
+  const brand = pick(isX ? DB.BRAND_X : DB.BRAND_IG);
+  const mfw = pick(DB.MFW_VARIANTS);
 
-        <!-- Platform Tabs -->
-        <div class="flex gap-1 mb-3 bg-[#F9F6F0] p-1 rounded-2xl border border-cardborder">
-            <button id="tab-igtt" onclick="switchPlatform('IGTT')" class="flex-1 py-1.5 text-xs bg-[#7C9DAB] font-bold rounded-xl text-white transition shadow-sm flex items-center justify-center gap-1">
-                <span>📷/🎵</span> IG / TT
-            </button>
-            <button id="tab-x" onclick="switchPlatform('X')" class="flex-1 py-1.5 text-xs text-[#82808F] font-bold rounded-xl hover:text-[#3A3845] transition flex items-center justify-center gap-1">
-                <span>🐦</span> X
-            </button>
-        </div>
-
-        <!-- With Hashtag Toggle Switch -->
-        <div class="flex justify-between items-center mb-3 text-xs text-[#3A3845] bg-[#F9F6F0] p-2.5 rounded-2xl border border-cardborder">
-            <span class="flex items-center gap-1.5 font-medium">
-                <span class="text-[#E8A0BF]">🏷️</span> Include Hashtags
-            </span>
-            <label class="relative inline-flex items-center cursor-pointer">
-                <input type="checkbox" id="hashtag-toggle" onchange="updateCaptionDisplay()" class="sr-only peer">
-                <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#7C9DAB]"></div>
-            </label>
-        </div>
-
-        <!-- Dynamic Caption Output Box -->
-        <div class="bg-[#F9F6F0] border border-cardborder rounded-2xl p-3.5 mb-3 text-xs text-[#3A3845] leading-relaxed min-h-[100px] max-h-[160px] overflow-y-auto flex items-center justify-center text-left relative group selection:bg-[#E8A0BF]/30" id="caption-box">
-            加载中...
-        </div>
-
-        <!-- Bottom Action Controls -->
-        <div class="flex gap-2">
-            <button onclick="generateRandomCaption()" class="flex-1 bg-white hover:bg-[#7C9DAB]/10 text-[#3A3845] border-2 border-[#7C9DAB]/40 py-2.5 rounded-2xl text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-sm active:scale-95">
-                <span>🔀</span> Random
-            </button>
-            <button onclick="copyCaption()" class="flex-1 bg-[#A084CA] hover:bg-[#8e72b8] text-white py-2.5 rounded-2xl text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-md active:scale-95">
-                <span>📋</span> Copy
-            </button>
-        </div>
-        
-        <!-- Toast Notification -->
-        <div id="toast" class="hidden mt-2 text-center text-xs text-[#7C9DAB] font-bold bg-[#7C9DAB]/10 py-1.5 rounded-xl border border-[#7C9DAB]/30 animate-pulse">
-            ✨ Copied to Clipboard!
-        </div>
-    </aside>
-
-    <!-- Floating Restore Widget Button -->
-    <button id="restore-caption-btn" onclick="toggleCaptionWidget()" class="hidden fixed bottom-6 right-6 bg-[#7C9DAB] hover:bg-[#6b8c9a] text-white text-xs font-bold px-4 py-3 rounded-full shadow-lg transition-all z-40 flex items-center gap-2 border-2 border-white animate-bounce">
-        <span>💬</span>
-        <span>Open Captions</span>
-    </button>
-
-    <script>
-        // 原始所有平台的帖子汇总数组
-        const allRawPosts = [
-            // Instagram / Media Posts
-            { id: "m050", name: "ig_PPENT", link: "https://www.instagram.com/reel/DdquzN1BaUR/?stkn=bjNwaXl3dTJ1NjJx" },
-            { id: "m055", name: "ig_PPENT", link: "https://www.instagram.com/p/DdqPRNfn1tb/?stkn=ejMwNXlpNGk1bHQx" },
-            { id: "m056", name: "ig_PPENT", link: "https://www.instagram.com/p/DdlzWBNnz8I/?stkn=dG5vOGhrenRsNDh5" },
-            { id: "m051", name: "mint", link: "https://www.instagram.com/reel/DdrWg4jERNG/?stkn=emxnOHVnbnhpd3Iy" },
-            { id: "m052", name: "mint", link: "https://www.instagram.com/p/DdrWJGMGVh5/?stkn=MXRvZTc0YWRkYjVpcg==" },
-            { id: "m053", name: "mensfoliomy", link: "https://www.instagram.com/p/DdsNvaDkgXZ/?img_index=1" },
-            { id: "m054", name: "bazaarthailand", link: "https://www.instagram.com/p/DdrVyMaz9AL/" },           
-            { id: "m034", name: "GQ Thailand", link: "https://www.instagram.com/reels/DdqcaLcCYiu/" },
-            { id: "m001", name: "Next stop: Milan. ✈️", link: "https://www.instagram.com/p/DdlzWBNnz8I/?stkn=MTRuYmdocThtajZpcg%3D%3D", likes: "32k", comments: "1532" },
-            { id: "m027", name: "mensfoliomy", link: "https://www.instagram.com/reel/DdqKxsjyOgb/" },
-            { id: "m028", name: "ellementhailand", link: "https://www.instagram.com/p/DdqJrf-FMzL/?img_index=1" },
-            { id: "m033", name: "ellethailandofficial", link: "https://www.instagram.com/p/DdqK5Vmgeos/?img_index=1" },
-            { id: "m032", name: "wwdthailand", link: "https://www.instagram.com/p/DdqMEnaEylH/?img_index=1" },
-            { id: "m029", name: "praewmag", link: "https://www.instagram.com/p/DdqMccXkg_g/?img_index=1" },
-            { id: "m030", name: "mintmag_th", link: "https://www.instagram.com/p/DdqMaKrTZQ4/" },
-            { id: "m031", name: "mintmag_th2", link: "https://www.instagram.com/p/DdqMPDlE2bv/?img_index=1" },
-            { id: "m024", name: "WWDTh", link: "https://www.instagram.com/reel/DdpwzwSp2pd/?stkn=Mm9qZnZsNHpmcHp1" },
-            { id: "m025", name: "vogueth", link: "https://www.instagram.com/reels/DdpxQxdvpm0/" },
-            { id: "m015", name: "wwdthailand", link: "https://www.instagram.com/p/DdnQzVKE7S5/?stkn=MXM4Njk3M2NsMXBrcA%3D%3D", likes: "10k", comments: "673" },
-            { id: "m004", name: "mensfolio", link: "https://www.instagram.com/p/DdmCbHMmDeI/?img_index=1", likes: "19k", comments: "731" },
-            { id: "m010", name: "Mensfoliomy", link: "https://www.instagram.com/p/DdmEWWUEgeV/?img_index=1", likes: "8829", comments: "733" },
-            { id: "m018", name: "fabmagazineth", link: "https://www.instagram.com/p/DdnT70yJ1-3/" },
-            { id: "m012", name: "mint", link: "https://www.instagram.com/p/DdnQ3NQE7Cw/?img_index=5&stkn=bmVvamd6dXN0dWMx" },
-            { id: "m011", name: "marieclairetw", link: "https://www.instagram.com/p/DdlVj0EDx1x/?stkn=NXV1OWo3dWVib3h6" },
-            { id: "m002", name: "daradaily", link: "https://www.instagram.com/p/Ddl5rarDV2J/?stkn=aWVqMmRrcGE3dHVs" },
-            { id: "m003", name: "grazia.sg", link: "https://www.instagram.com/p/Ddl9Rw5AUg2/?img_index=6&stkn=MXd3bGw4eHNpMWppaQ%3D%3D" },
-            { id: "m006", name: "Styledailyhk", link: "https://www.instagram.com/reel/DdmBixrTV0e/?stkn=MTRvdGVjNjduaGIzYQ==" },
-            { id: "m026", name: "vogueth（BKPP）", link: "https://www.instagram.com/p/Ddp3D1rj5_B/?img_index=1" },
-            { id: "m013", name: "bazzarth（BKPP）", link: "https://www.instagram.com/p/DdnQk7LkyA1/?stkn=enFtOWdhMTNwNmlh" },
-            { id: "m014", name: "vogueth（BKPP）", link: "https://www.instagram.com/p/DdnQn1dD99m/?stkn=NnYxMHhjcW45c2Rj" },
-            { id: "m015_2", name: "ellethailandofficial（BKPP）", link: "https://www.instagram.com/p/DdiDvRxyeD3/?utm_source=ig_web_copy_link&stkn=NTc4MTIwNjQ2YQ%3D%3D" },
-            { id: "m017", name: "ellementh（BKPP）", link: "https://www.instagram.com/p/DdnSMjkEjF2/?img_index=1" },
-            { id: "m016", name: "lofficielmy（BKPP）", link: "https://www.instagram.com/p/DdmWgoeH0LK/?utm_source=ig_web_copy_link&stkn=NTc4MTIwNjQ2YQ%3D%3D" },
-            { id: "m019", name: "tatlerth（BKPP）", link: "https://www.instagram.com/p/DdnUp6REw1X/?img_index=2&stkn=MTV5Mm05N3Jia3ZhYg%3D%3D" },
-            { id: "m020", name: "esquirethai（BKPP）", link: "https://www.instagram.com/p/DdnSyPkk9H8/?img_index=1" },
-            { id: "m021", name: "luxematters.th（BKPP）", link: "https://www.instagram.com/p/DdnSyK-E2MZ/?img_index=1" },
-            { id: "m022", name: "emporium_emquartier", link: "https://www.instagram.com/p/DdndK7PI88D/?img_index=1" },
-            { id: "m023", name: "kullastreemag（BKPP）", link: "https://www.instagram.com/p/DdnkGnrCVcX/?img_index=1" },
-
-            // TikTok Posts
-            { id: "tk001", name: "pp ent", link: "https://vt.tiktok.com/ZSbevor7a/" },
-            { id: "tk004", name: "bazzarth", link: "https://vt.tiktok.com/ZSb85DpRT/" },
-            { id: "tk005", name: "Ellethailand", link: "https://vt.tiktok.com/ZSb85Hqy7/" },
-            { id: "tk002", name: "WWDth", link: "https://vt.tiktok.com/ZSbdDuugC/" },
-            { id: "tk003", name: "vogueth", link: "https://vt.tiktok.com/ZSbdUNbQB/" },
-            { id: "tk1", name: "PP Krit x GUCCI TikTok", link: "https://vt.tiktok.com/ZSqKmbs8Y/" },
-
-            // X (Twitter) Posts
-            { id: "x000", name: "GUCCI-OFFICIAL", link: "https://x.com/gucci/status/2102413529479536691?s=46" },
-            { id: "x047", name: "ellethailand", link: "https://x.com/ellethailand/status/2103169356599636444?s=46" },
-            { id: "x048", name: "bazaarthailand", link: "https://x.com/bazaarthailand/status/2103163805618585914?s=46" },
-            { id: "x049", name: "wwdthailand", link: "https://x.com/wwdthailand/status/2103018345880830294?s=46" },
-            { id: "x050", name: "X_PPENT", link: "https://x.com/ppkrit_ent/status/2103154463200743769?s=46" },
-            { id: "x051", name: "X_PPENT", link: "https://x.com/ppkrit_ent/status/2103154630108803323?s=46" },
-            { id: "x052", name: "X_PPENT", link: "https://x.com/ppkrit_ent/status/2103154247760290136?s=46" }, 
-            { id: "x053", name: "X_PPENT", link: "https://x.com/ppkrit_ent/status/2103154366316413060?s=46" },
-            { id: "x054", name: "X_PPENT", link: "https://x.com/ppkrit_ent/status/2103154552174530589?s=46" },              
-            { id: "x055", name: "mint", link: "https://x.com/mintmag_th/status/2103165339010036092?s=46" },
-            { id: "x056", name: "mint", link: "https://x.com/mintmag_th/status/2103163596381573523?s=46" },
-            { id: "x047_m", name: "mint", link: "https://x.com/mintmag_th/status/2103163550420389918?s=46" },
-            { id: "x058", name: "mint", link: "https://x.com/mintmag_th/status/2103160482538676282?s=46" },
-            { id: "x059", name: "praewdaily", link: "https://x.com/praewdaily/status/2103002819842429340?s=46" },
-            { id: "x060", name: "allnews_th", link: "https://x.com/allnews_th/status/2103125771032395954?s=46" },
-            { id: "x061", name: "viraltakes", link: "https://x.com/viraltakes/status/2103178177032151428?s=46" },
-            { id: "x062", name: "oneilymusic", link: "https://x.com/oneilymusic/status/2103092636764737783?s=46" },
-            { id: "x063", name: "oneilymusic", link: "https://x.com/oneilymusic/status/2103175831875146184?s=46" },
-            { id: "x064", name: "oneilymusic", link: "https://x.com/oneilymusic/status/2103175251580563900?s=46" },
-            { id: "x044", name: "GUCCI JAPAN", link: "https://x.com/gucci_jp/status/2103024133525168327?s=46" }, 
-            { id: "x045", name: "GUCCI JAPAN", link: "https://x.com/gucci_jp/status/2103046799367848436?s=46" }, 
-            { id: "x042", name: "GUCCI JAPAN", link: "https://x.com/gucci_jp/status/2103016586802274454?s=46" }, 
-            { id: "x046", name: "viraltakes", link: "https://x.com/viraltakes/status/2103046341631017004?s=46" }, 
-            { id: "x028", name: "X_PPENT", link: "https://x.com/PPKrit_Ent/status/2103007539193606263" },
-            { id: "x038", name: "X_PPENT", link: "https://x.com/PPKrit_Ent/status/2103007502975820143" },
-            { id: "x036", name: "X_PPENT", link: "https://x.com/PPKrit_Ent/status/2103007421035942054" },
-            { id: "x039", name: "X_PPENT", link: "https://x.com/PPKrit_Ent/status/2103007350596735416" },
-            { id: "x035", name: "X_PPENT", link: "https://x.com/ppkrit_ent/status/2102883208954310996?s=46" },
-            { id: "x040", name: "X_PPENT", link: "https://x.com/ppkrit_ent/status/2103007350596735416?s=46" },
-            { id: "x041", name: "X_PPENT", link: "https://x.com/ppkrit_ent/status/2103007502975820143?s=46" },
-            { id: "x043", name: "esquire_th（NEW）", link: "https://x.com/esquire_th/status/2103012598581207441?s=46" },
-            { id: "x033", name: "bazaarthailand（onlypp）", link: "https://x.com/bazaarthailand/status/2103010497021071469?s=46" },
-            { id: "x031", name: "ellethailand（onlypp）", link: "https://x.com/ellethailand/status/2103000037487993139?s=46" },
-            { id: "x034", name: "ellethailand（onlypp）", link: "https://x.com/ellementhailand/status/2103004774736244836?s=46" }, 
-            { id: "x032", name: "ELLEMENThailand（onlypp）", link: "https://x.com/ellementhailand/status/2103004898925375778?s=46" },
-            { id: "x037", name: "MensFolioTH（NEW）", link: "https://x.com/mensfolioth/status/2103010133009895710?s=46" },
-            { id: "x027", name: "VOGUE THAILAND", link: "https://x.com/voguethailand/status/2102945716566155697?s=46" },
-            { id: "x020", name: "voguethailand", link: "https://x.com/voguethailand/status/2102589782769668116?s=46" },
-            { id: "x021", name: "voguethailand（BKPP）", link: "https://x.com/voguethailand/status/2102589752532689108?s=46" },
-            { id: "x029", name: "voguethailand（BKPP）", link: "https://x.com/voguethailand/status/2102956314947436948?s=46" },
-            { id: "x030", name: "voguethailand（BKPP）", link: "https://x.com/voguethailand/status/2102956329153573042?s=46" },
-            { id: "x032_bkpp", name: "voguethailand（BKPP）", link: "https://x.com/voguethailand/status/2102980965136289928?s=46" },
-            { id: "x017", name: "bazaarthailand", link: "https://x.com/bazaarthailand/status/2102589158766379032?s=46" },
-            { id: "x018", name: "esquire_th", link: "https://x.com/esquire_th/status/2102600609333756121?s=46" },
-            { id: "x019", name: "MensFolioTH", link: "https://x.com/mensfolioth/status/2102595487627121009?s=46" },
-            { id: "x022", name: "th_hashtag（BKPP）", link: "https://x.com/th_hashtag/status/2102588656506785793?s=46" },               
-            { id: "x023", name: "mintmag_th", link: "https://x.com/mintmag_th/status/2102589050997944584?s=46" },
-            { id: "x033_mint", name: "mintmag_th", link: "https://x.com/mintmag_th/status/2103001954465276081?s=46" },
-            { id: "x034_mint", name: "mintmag_th", link: "https://x.com/mintmag_th/status/2103001339097936367?s=46" },
-            { id: "x035_gw", name: "gangwayth", link: "https://x.com/gangwayth/status/2103003012361052589?s=46" },
-            { id: "x024", name: "howemagazine_th（BKPP）", link: "https://x.com/howemagazine_th/status/2102609937906217095?s=46" },
-            { id: "x025", name: "girlngloss（BKPP）", link: "https://x.com/girlngloss/status/2102624153061007848?s=46" },
-            { id: "x026", name: "iconsiam（BKPP）", link: "https://x.com/iconsiam/status/2102638949231632587?s=46" },
-            { id: "x001", name: "X_PPENT", link: "https://x.com/ppkrit_ent/status/2102383667868016898?s=46" },
-            { id: "x002", name: "X_PPENT ", link: "https://x.com/ppkrit_ent/status/2102383721496375539?s=46" },
-            { id: "x003", name: "X_PPENT", link: "https://x.com/ppkrit_ent/status/2102383766438367376?s=46" },
-            { id: "x004", name: "X_PPENT", link: "https://x.com/ppkrit_ent/status/2102383827708756147?s=46" },
-            { id: "x005", name: "X_PPENT ", link: "https://x.com/ppkrit_ent/status/2102383863414890973?s=46" },
-            { id: "x006", name: "X_PPENT", link: "https://x.com/ppkrit_ent/status/2102383902912655788?s=46" },
-            { id: "x007", name: "X_PPENT ", link: "https://x.com/ppkrit_ent/status/2102383940581614076?s=46" },
-            { id: "x008", name: "daradaily", link: "https://x.com/daradaily/status/2102388877369729139?s=46" },
-            { id: "x008_2", name: "tpoptjai", link: "https://x.com/tpoptjai_/status/2102386937613234583?s=46" },
-            { id: "x009", name: "hello_asian", link: "https://x.com/hello_asian/status/2102418106232774968?s=46" },
-            { id: "x010", name: "eleva_official", link: "https://x.com/eleva_official/status/2102434613239181751?s=46" },
-            { id: "x011", name: "noppewth", link: "https://x.com/noppewth/status/2102440263390237030?s=46" },
-            { id: "x012", name: "popconth", link: "https://x.com/popconth/status/2102440730447016263?s=46" },
-            { id: "x013", name: "viraltakes", link: "https://x.com/viraltakes/status/2102442887220965868?s=46" },
-            { id: "x014", name: "pangmak2026", link: "https://x.com/pangmak2026/status/2102439967230488722?s=46" },
-            { id: "x015", name: "otpcnews", link: "https://x.com/otpcnews/status/2102522075063705616?s=46" },
-            { id: "x016", name: "oneilymusic", link: "https://x.com/oneilymusic/status/2102435416049934373?s=46" }
+  if (tier === 0) {
+    // 短句组装逻辑 (<=15个词)
+    if (Math.random() < 0.75) {
+      const B = DB.SHORT_BITS;
+      const adj = pick(B.adjectives), noun = pick(B.nouns),
+            v2 = pick(B.verbs2), obj = pick(B.objects), hv = pick(B.hypeBits);
+      let forms;
+      if (isAfter) {
+        forms = [
+          `${name} x ${brand}: what a journey.`,
+          `${name} and ${brand} - history made.`,
+          `${name} ${v2} ${obj} in ${brand}.`,
+          `${name} x ${brand}: a new chapter begins.`
         ];
+      } else if (styleType === 0) {
+        forms = [
+          `${name} x ${brand}: ${adj} ${noun}.`,
+          `${name} ${v2} ${obj} in ${brand}.`,
+          `${name}, ${adj} in ${brand}.`,
+          `${brand} and ${name}: ${adj} ${noun}.`
+        ];
+      } else {
+        forms = [
+          `${name} ${hv} this ${brand} look.`,
+          `${name} in ${brand}? ${adj} ${noun}.`,
+          `${name} ${hv} ${obj}!`,
+          `${name} and ${brand} - ${adj} ${noun}!`
+        ];
+      }
+      let s = pick(forms);
+      if (!s.includes(name)) s = `${name}, ${s}`;
+      if (!/gucci/i.test(s)) s = `${s} - for GUCCI.`;
+      return s;
+    }
+    let s = isAfter ? pick(DB.SHORT_AFTER) : pick(styleType === 0 ? DB.SHORT_FORMAL : DB.SHORT_HYPE);
+    if (!s.includes(DB.NAME)) s = `${DB.NAME}, ${s}`;
+    if (!/gucci/i.test(s)) s = `${s} - for GUCCI.`;
+    return s;
+  }
 
-        // 基础过滤条件
-        const filterGucci = (item) => item.name && item.name.toUpperCase().includes("GUCCI");
-        const filterPpent = (item) => item.name && item.name.toUpperCase().includes("PPENT");
-        const filterBkpp = (item) => item.name && item.name.toUpperCase().includes("BKPP");
+  if (tier === 1) {
+    // 16-25词: 精简结构
+    const t = (Math.random() * 3) | 0;
+    let s;
+    if (t === 0) s = `${pick(styleGroup.starters)} ${name} ${pick(styleGroup.verbs)} ${brand} at ${mfw} - ${pick(styleGroup.endings)}`;
+    else if (t === 1) s = `${name} ${pick(styleGroup.verbs)} ${brand} at ${mfw}, ${pick(styleGroup.phrases)}.`;
+    else s = `${pick(styleGroup.starters)} ${name} in ${brand} at ${mfw}: ${pick(styleGroup.phrases)}.`;
+    return s;
+  }
 
-        // 平台的优先级排序算法（instagram > tiktok > x > other）
-        const getPlatformPriority = (link) => {
-            const l = link.toLowerCase();
-            if (l.includes("instagram.com")) return 1;
-            if (l.includes("tiktok.com")) return 2;
-            if (l.includes("x.com") || l.includes("twitter.com")) return 3;
-            return 4;
-        };
+  if (tier === 3) {
+    // >35词: 完整扩展结构
+    let s = buildMainText(styleGroup, styleType, isAfter, isX);
+    if (wordCount(s) < 36) s = `${s} ${pick(styleGroup.starters)} ${pick(styleGroup.phrases)}.`;
+    return s;
+  }
 
-        const sortByPriority = (arr) => {
-            return arr.slice().sort((a, b) => getPlatformPriority(a.link) - getPlatformPriority(b.link));
-        };
+  return buildMainText(styleGroup, styleType, isAfter, isX);
+}
 
-        // 动态构建按照逻辑分类且按平台优先级排好的 postsData
-        const gucciPosts = sortByPriority(allRawPosts.filter(item => filterGucci(item)));
-        const ppentPosts = sortByPriority(allRawPosts.filter(item => filterPpent(item) && !filterGucci(item)));
-        const remainingPosts = allRawPosts.filter(item => !filterGucci(item) && !filterPpent(item));
+function wordCount(text) {
+  return text.split(/\s+/).filter(Boolean).length;
+}
 
-        const postsData = {
-            brand: [
-                { id: "pp004", name: "🐼 （NEW）", link: "https://www.instagram.com/pp.kritt/p/DdrNnn7AQXp/", likes: "177k", comments: "7336" },
-                { id: "pp003", name: "🖼️（NEW）", link: "https://www.instagram.com/p/DdqDTukCPbK/?img_index=1", likes: "237k", comments: "13k" },   
-                { id: "pp002", name: "🚃（NEW）", link: "https://www.instagram.com/p/DdpUE08ysFK/", likes: "280k", comments: "14k" },        
-                { id: "pp001", name: "Ciao 🙂‍↔️", link: "https://www.instagram.com/pp.kritt/p/Ddly5Nlgdz9/", likes: "343k", comments: "25k" }           
-            ],
-            gucci_official: gucciPosts,
-            ppent_posts: ppentPosts,
-            media_onlypp: sortByPriority(remainingPosts.filter(item => !filterBkpp(item) && getPlatformPriority(item.link) === 1)),
-            media_bkpp: sortByPriority(remainingPosts.filter(item => filterBkpp(item) && getPlatformPriority(item.link) === 1)),
-            tiktok_posts: sortByPriority(remainingPosts.filter(item => getPlatformPriority(item.link) === 2)),
-            x_posts: sortByPriority(remainingPosts.filter(item => getPlatformPriority(item.link) === 3))
-        };
+function buildGrammarText(isX, styleType, isAfter) {
+  let styleGroup, styleName;
+  if (isAfter) {
+    styleGroup = DB.AFTER; styleName = styleType === 0 ? "Elegant" : "Hype";
+  } else if (styleType === 0) {
+    styleGroup = DB.FORMAL; styleName = "Elegant";
+  } else {
+    styleGroup = DB.HYPE; styleName = "Hype";
+  }
 
-        // Hashtags 库
-        const targetHashtags = "#PPKRITxGUCCIMFW26 #GUCCISS27xPPKRIT #GucciTheStoreShow #Gucci #PPKritt #MFW @gucci @ppkritt";
-        
-        // 评论语料库
-        const captionTemplates = {
-            shorts: [
-                "PPKRIT x GUCCI is pure magic! ✨",
-                "The ultimate GUCCI Brand Ambassador, PPKRIT! 💖",
-                "PPKRIT owned Milan Fashion Week! 🔥",
-                "Demna and PPKRIT, what an iconic duo! 💫",
-                "So proud of PPKRIT for GUCCI! 🌹",
-                "PPKRIT is the main event! 👑",
-                "Absolute perfection from PPKRIT in GUCCI! 🎨",
-                "Fashion icon PPKRIT shines again! 🌟"
-            ],
-            m_openings: [
-                "Absolute perfection! 💖",
-                "Can't get over this look! ✨",
-                "So proud of our boy 🌷",
-                "Pure luxury and style! 💫",
-                "Serving pure visual excellence! 🌟"
-            ],
-            m_bodies: [
-                "PPKRIT as GUCCI Brand Ambassador delivers unmatched high fashion energy",
-                "PP Krit representing GUCCI in Milan completely stole the show",
-                "PPKRIT's bond with Demna and the GUCCI family is so beautiful",
-                "PPKRIT proves his incredible influence in the fashion world again",
-                "The connection between PPKRIT and Demna is truly iconic"
-            ],
-            m_closings: [
-                "Nobody does it like him! 🔥",
-                "Always proud of you! ✨",
-                "Forever supporting PPKRIT! 💖",
-                "Keep shining fashion icon! 🌟",
-                "So well deserved! 🌸"
-            ],
-            l_openings: [
-                "An absolute fashion masterpiece! 🎨",
-                "The style and elegance are completely unmatched! ✨",
-                "Iconic moment that will go down in fashion history! 🔥"
-            ],
-            l_identities: [
-                "PPKRIT shining so bright as GUCCI's Brand Ambassador",
-                "PP Krit commanding the fashion stage for GUCCI"
-            ],
-            l_relations: [
-                "with his special bond and mutual respect with Demna,",
-                "surrounded by love from Demna and the GUCCI team,"
-            ],
-            l_performances: [
-                "he effortlessly proves his status as a true fashion powerhouse.",
-                "he delivers pure perfection and redefines modern luxury."
-            ],
-            l_feelings: [
-                "Every single detail of this look is breathtaking.",
-                "Truly born to be a superstar in the high fashion world."
-            ],
-            l_closings: [
-                "Love you so much, keep shining! 💕",
-                "Can't wait to see what comes next! 🚀"
-            ]
-        };
+  // 核心优化比例：
+  // Tier 0 (<=15词): 55%
+  // Tier 1 (16-25词): 30% (此时 <=25词 达到 85%, 满足至少80%的目标)
+  // Tier 2 (26-35词): 10%
+  // Tier 3 (>35词): 5%
+  const r = Math.random();
+  let tier = isX
+    ? (r < 0.55 ? 0 : r < 0.85 ? 1 : 2)
+    : (r < 0.55 ? 0 : r < 0.85 ? 1 : r < 0.95 ? 2 : 3);
+  
+  const ranges = [[1, 15], [16, 25], [26, 35], [36, 999]];
 
-        let currentRawText = "";
-        let currentPlatform = "IGTT";
+  let sentence = buildTierText(tier, styleGroup, styleType, isAfter, isX);
+  let guard = 0;
+  while (guard++ < 50) {
+    const w = wordCount(sentence);
+    const fit = tier === 3 ? w >= 36 : (w >= ranges[tier][0] && w <= ranges[tier][1]);
+    if (fit) break;
+    sentence = buildTierText(tier, styleGroup, styleType, isAfter, isX);
+    if (guard >= 50 && tier > 0) { // 兜底降级
+      tier--;
+      guard = 0;
+    }
+  }
 
-        // 初始化运行
-        window.onload = function() {
-            renderPosts();
-            updateProgress();
-            switchPlatform('IGTT');
-        };
+  if (isX) {
+    let fullX = sentence + "\n\n" + X_TAGS;
+    if (fullX.length > X_LIMIT) {
+      let s = isAfter ? pick(DB.SHORT_AFTER) : pick(styleType === 0 ? DB.SHORT_FORMAL : DB.SHORT_HYPE);
+      if (!/gucci/i.test(s)) s = `${s} - for GUCCI.`;
+      fullX = s + "\n\n" + X_TAGS;
+      if (fullX.length > X_LIMIT) fullX = `PP Krit x ${pick(DB.BRAND_X)}!\n\n${X_TAGS}`;
+      sentence = fullX;
+    } else {
+      sentence = fullX;
+    }
+  }
 
-        function generateRandomCaption() {
-            const rand = arr => arr[Math.floor(Math.random() * arr.length)];
-            const typeChance = Math.random();
-            let result = "";
+  return { text: sentence, styleName: styleName };
+}
 
-            if (typeChance < 0.3) {
-                result = rand(captionTemplates.shorts);
-            } else if (typeChance < 0.7) {
-                const open = rand(captionTemplates.m_openings);
-                const body = rand(captionTemplates.m_bodies);
-                const close = rand(captionTemplates.m_closings);
-                result = `${open} ${body}. ${close}`;
-            } else {
-                const open = rand(captionTemplates.l_openings);
-                const id = rand(captionTemplates.l_identities);
-                const rel = rand(captionTemplates.l_relations);
-                const perf = rand(captionTemplates.l_performances);
-                const feel = rand(captionTemplates.l_feelings);
-                const close = rand(captionTemplates.l_closings);
-                result = `${open} ${id}, ${rel} ${perf} ${feel} ${close}`;
-            }
+function getBatch() {
+  const isX = currentMode.endsWith("-x");
+  const isAfter = currentMode.indexOf("after") === 0;
+  const results = [];
+  const seen = new Set();
+  let globalSeen = loadSeen();
+  let styleIndex = 0;
+  let misses = 0;
+  let flushed = false;
 
-            currentRawText = result;
-            updateCaptionDisplay();
-        }
+  while (results.length < PAGE_SIZE) {
+    const currentStyle = styleIndex % 2;
+    const item = buildGrammarText(isX, currentStyle, isAfter);
 
-        function updateCaptionDisplay() {
-            const hashtagCheckbox = document.getElementById('hashtag-toggle');
-            const withHashtag = hashtagCheckbox ? hashtagCheckbox.checked : false;
-            let finalText = currentRawText;
+    if (seen.has(item.text) || globalSeen.has(item.text)) {
+      misses++;
+      if (misses > 300 && !flushed) {
+        globalSeen = new Set();
+        flushed = true;
+        misses = 0;
+      }
+      if (misses > 800) break;
+      continue;
+    }
+    misses = 0;
+    seen.add(item.text);
+    globalSeen.add(item.text);
+    results.push(item);
+    styleIndex++;
+  }
+  saveSeen(globalSeen);
+  return results;
+}
 
-            if (withHashtag) {
-                finalText += "\n\n" + targetHashtags;
-            }
+function render() {
+  list.innerHTML = "";
+  const items = getBatch();
+  items.forEach((item, i) => {
+    const card = document.createElement("div");
+    card.className = "card";
+    
+    const highlighted = item.text
+      .replace(/PP Krit/g, m => `<b>${m}</b>`)
+      .replace(/@?GUCCI|Gucci/g, m => `<b>${m}</b>`)
+      .replace(/MFW\d*|Milan Fashion Week/gi, m => `<b>${m}</b>`);
 
-            const captionBox = document.getElementById('caption-box');
-            if (captionBox) {
-                captionBox.innerText = finalText;
-            }
-        }
+    const styleClass = item.styleName === "Elegant" ? "style-formal" : "style-hype";
 
-        function copyCaption() {
-            const captionBox = document.getElementById('caption-box');
-            if (!captionBox) return;
+    card.innerHTML = `
+      <div class="card-header">
+        <span class="index">#${i + 1}</span>
+        <div class="card-tags">
+          <span class="tag ${styleClass}">${item.styleName}</span>
+        </div>
+      </div>
+      <div class="text">${highlighted}</div>
+      <div style="text-align: right; margin-top: 4px;"><span class="tip">Tap to copy</span></div>
+    `;
+    
+    card.addEventListener("click", () => copyText(item.text, card));
+    list.appendChild(card);
+  });
+}
 
-            const textToCopy = captionBox.innerText;
-            const textArea = document.createElement("textarea");
-            textArea.value = textToCopy;
-            document.body.appendChild(textArea);
-            textArea.select();
-            try {
-                document.execCommand('copy');
-                showToast();
-            } catch (err) {
-                if (navigator.clipboard) {
-                    navigator.clipboard.writeText(textToCopy).then(showToast);
-                }
-            }
-            document.body.removeChild(textArea);
-        }
+async function copyText(text, card) {
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch (e) {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand("copy");
+    document.body.removeChild(ta);
+  }
+  card.classList.add("copied");
+  card.querySelector(".tip").textContent = "Copied ✓";
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("show");
+    card.classList.remove("copied");
+    card.querySelector(".tip").textContent = "Tap to copy";
+  }, 1500);
+}
 
-        function showToast() {
-            const toast = document.getElementById('toast');
-            if (toast) {
-                toast.classList.remove('hidden');
-                setTimeout(() => toast.classList.add('hidden'), 2200);
-            }
-        }
+document.getElementById("refreshBtn").addEventListener("click", render);
 
-        // 渲染页面数据列表
-        function renderPosts() {
-            const completed = getCompletedPosts();
-            
-            const renderList = (key, isIgSection = false) => {
-                const data = postsData[key] || [];
-                const container = document.getElementById(`${key}-posts`);
-                if (!container) return;
+document.querySelectorAll(".tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+    if (currentMode === tab.dataset.mode) return;
+    currentMode = tab.dataset.mode;
+    document.querySelectorAll(".tab").forEach(t => t.classList.toggle("active", t === tab));
+    render();
+  });
+});
 
-                if (data.length === 0) {
-                    container.innerHTML = `<p class="text-xs text-subtext col-span-2 py-2 italic text-center">暂无内容 (No posts available)</p>`;
-                    return;
-                }
-
-                container.innerHTML = data.map(post => {
-                    const isDone = completed.includes(post.id);
-
-                    const statsHtml = (isIgSection && (post.likes || post.comments)) ? `
-                        <div class="flex items-center gap-1.5 mt-0.5">
-                            ${post.likes ? `<span class="flex items-center gap-0.5 text-[10px] font-bold text-[#82808F] bg-[#F9F6F0] px-1.5 py-0.2 rounded border border-cardborder"><span class="text-[#E8A0BF] text-[10px]">❤️</span> ${post.likes}</span>` : ''}
-                            ${post.comments ? `<span class="flex items-center gap-0.5 text-[10px] font-bold text-[#82808F] bg-[#F9F6F0] px-1.5 py-0.2 rounded border border-cardborder"><span class="text-[#7C9DAB] text-[10px]">💬</span> ${post.comments}</span>` : ''}
-                        </div>
-                    ` : '';
-
-                    return `
-                        <div class="bg-cardbg border ${isDone ? 'border-[#7C9DAB] bg-[#7C9DAB]/5' : 'border-cardborder'} py-2 px-3 rounded-xl flex justify-between items-center transition-all hover:shadow-sm group">
-                            <div class="flex flex-col min-w-0 pr-2">
-                                <div class="flex items-center gap-2">
-                                    <span class="text-[10px] font-bold px-2 py-0.5 rounded-lg transition flex items-center gap-1 shrink-0 ${isDone ? 'bg-[#7C9DAB] text-white shadow-sm' : 'bg-[#A084CA] text-white'}">
-                                        ${isDone ? 'DONE ✓' : 'BOOST!'}
-                                    </span>
-                                    <span class="text-xs font-bold text-[#3A3845] truncate group-hover:text-[#7C9DAB] transition">${post.name}</span>
-                                </div>
-                                ${statsHtml}
-                            </div>
-                            <a href="${post.link}" target="_blank" rel="noopener noreferrer" onclick="markPostDone('${post.id}')" class="ml-2 text-[10px] bg-[#F9F6F0] hover:bg-[#7C9DAB] hover:text-white text-[#82808F] p-1.5 rounded-lg border border-cardborder transition flex items-center justify-center shrink-0 shadow-sm active:scale-90" title="Open Post">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                            </a>
-                        </div>
-                    `;
-                }).join('');
-            };
-
-            renderList('brand', true);
-            renderList('gucci_official', true);
-            renderList('media_onlypp', true);
-            renderList('ppent_posts', true);
-            renderList('media_bkpp', true);
-            renderList('tiktok_posts', false);
-            renderList('x_posts', false);
-        }
-
-        function getCompletedPosts() {
-            try {
-                return JSON.parse(localStorage.getItem('completed_posts') || '[]');
-            } catch (e) {
-                return [];
-            }
-        }
-
-        function markPostDone(postId) {
-            let completed = getCompletedPosts();
-            if (!completed.includes(postId)) {
-                completed.push(postId);
-                localStorage.setItem('completed_posts', JSON.stringify(completed));
-                setTimeout(() => {
-                    renderPosts();
-                    updateProgress();
-                }, 300);
-            }
-        }
-
-        function resetProgress() {
-            if (confirm("确定要重置打卡进度吗？(Reset your progress?)")) {
-                localStorage.removeItem('completed_posts');
-                renderPosts();
-                updateProgress();
-            }
-        }
-
-        function updateProgress() {
-            const completed = getCompletedPosts();
-            const total = postsData.brand.length + postsData.gucci_official.length + postsData.media_onlypp.length + postsData.ppent_posts.length + postsData.media_bkpp.length + postsData.x_posts.length + postsData.tiktok_posts.length;
-            const el = document.getElementById('progress-text');
-            if (el) {
-                el.innerText = completed.length + " / " + total;
-            }
-        }
-
-        function toggleCaptionWidget() {
-            const widget = document.getElementById('caption-widget');
-            const restoreBtn = document.getElementById('restore-caption-btn');
-            if (widget && restoreBtn) {
-                const isHidden = widget.classList.contains('hidden');
-                if (isHidden) {
-                    widget.classList.remove('hidden');
-                    restoreBtn.classList.add('hidden');
-                } else {
-                    widget.classList.add('hidden');
-                    restoreBtn.classList.remove('hidden');
-                }
-            }
-        }
-
-        function switchPlatform(platform) {
-            currentPlatform = platform;
-            const tabIGTT = document.getElementById('tab-igtt');
-            const tabX = document.getElementById('tab-x');
-            const hashtagCheckbox = document.getElementById('hashtag-toggle');
-            if (!tabIGTT || !tabX) return;
-            
-            if (platform === 'IGTT') {
-                tabIGTT.className = "flex-1 py-1.5 text-xs bg-[#7C9DAB] font-bold rounded-xl text-white transition shadow-sm flex items-center justify-center gap-1";
-                tabX.className = "flex-1 py-1.5 text-xs text-[#82808F] font-bold rounded-xl hover:text-[#3A3845] transition flex items-center justify-center gap-1";
-                if (hashtagCheckbox) hashtagCheckbox.checked = false;
-            } else {
-                tabX.className = "flex-1 py-1.5 text-xs bg-[#7C9DAB] font-bold rounded-xl text-white transition shadow-sm flex items-center justify-center gap-1";
-                tabIGTT.className = "flex-1 py-1.5 text-xs text-[#82808F] font-bold rounded-xl hover:text-[#3A3845] transition flex items-center justify-center gap-1";
-                if (hashtagCheckbox) hashtagCheckbox.checked = true;
-            }
-            generateRandomCaption();
-        }
-    </script>
+render();
+</script>
 </body>
 </html>
