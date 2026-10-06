@@ -3,194 +3,206 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PP Krit × GUCCI — Morandi Style Engine</title>
+<title>PP Krit × RIMOWA — Morandi Caption Generator</title>
 <style>
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    /* 温柔的莫兰迪米色/奶白色背景 */
-    background: linear-gradient(135deg, #FDFBF7 0%, #F5F2EB 100%);
+    background: linear-gradient(135deg, #F9F8F6 0%, #EFECE6 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     padding: 24px 16px;
-    color: #4A4A4A;
+    color: #4A4643;
   }
+
   .container {
     width: 100%;
-    max-width: 560px;
+    max-width: 580px;
   }
   
-  /* 梦幻浅紫色主标题 */
   h1 {
-    background: linear-gradient(135deg, #8E7CB5 0%, #A390C4 100%);
+    background: linear-gradient(135deg, #7A8B7B 0%, #5B6A5C 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
-    letter-spacing: 0.6px;
-    margin-bottom: 3px;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
   }
+
   .subtitle {
-    color: #9B9488;
+    color: #938C82;
     text-align: center;
-    font-size: 11.5px;
-    margin-bottom: 14px;
+    font-size: 12px;
+    margin-bottom: 18px;
     font-weight: 500;
   }
   
   .tabs {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    margin-bottom: 14px;
+    gap: 10px;
+    margin-bottom: 16px;
   }
+
   .tab {
-    padding: 10px 6px;
+    padding: 12px 8px;
     text-align: center;
-    border-radius: 10px;
-    background: #EFECE6;
-    color: #7A7369;
-    font-size: 11.5px;
-    font-weight: 500;
+    border-radius: 12px;
+    background: #E5E1D8;
+    color: #726B60;
+    font-size: 13px;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.25s ease;
-    border: 1px solid #E2DDD5;
+    border: 1px solid #D8D2C5;
     display: flex;
     justify-content: center;
     align-items: center;
-    white-space: nowrap;
-  }
-  .tab:hover {
-    background: #E6E1D8;
-    color: #5A544B;
-  }
-  /* 激活状态：梦幻紫调莫兰迪 */
-  .tab.active {
-    background: #EAE5F2;
-    color: #6C5A8D;
-    border-color: #C3B6D8;
-    font-weight: 600;
-    box-shadow: 0 2px 8px rgba(142, 124, 181, 0.12);
+    user-select: none;
   }
 
-  /* 按钮：莫兰迪薄荷绿 */
+  .tab:hover {
+    background: #DDD7CB;
+    color: #524C43;
+  }
+
+  .tab.active {
+    background: #A28D8A;
+    color: #FFFFFF;
+    border-color: #8E7A77;
+    font-weight: 600;
+    box-shadow: 0 3px 12px rgba(162, 141, 138, 0.25);
+  }
+
   .btn {
     display: block;
     width: 100%;
-    padding: 11px;
-    background: #8BA89B;
+    padding: 13px;
+    background: #7A8B7B;
     color: #FFFFFF;
-    font-size: 12.5px;
+    font-size: 13px;
     font-weight: 600;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     transition: all 0.25s ease;
-    margin-bottom: 16px;
-    box-shadow: 0 3px 10px rgba(139, 168, 155, 0.25);
+    margin-bottom: 18px;
+    box-shadow: 0 4px 12px rgba(122, 139, 123, 0.25);
   }
+
   .btn:hover {
-    background: #7B988B;
-    box-shadow: 0 5px 14px rgba(139, 168, 155, 0.35);
+    background: #6A7B6B;
+    box-shadow: 0 6px 16px rgba(122, 139, 123, 0.35);
     transform: translateY(-1px);
   }
   
-  /* 卡片：莫兰迪白羊脂质感 */
   .card {
     background: #FFFFFF;
-    border: 1px solid #EFECE6;
-    border-radius: 12px;
-    padding: 13px 15px;
-    margin-bottom: 10px;
+    border: 1px solid #EBE7DF;
+    border-radius: 14px;
+    padding: 15px 18px;
+    margin-bottom: 12px;
     cursor: pointer;
     transition: all 0.25s ease;
     position: relative;
-    box-shadow: 0 2px 10px rgba(180, 170, 160, 0.06);
+    box-shadow: 0 2px 10px rgba(160, 150, 140, 0.06);
   }
+
   .card:hover {
-    background: #FCFBF9;
-    border-color: #DCD4E7;
-    box-shadow: 0 4px 16px rgba(142, 124, 181, 0.12);
+    background: #FCFCFA;
+    border-color: #C2B8A3;
+    box-shadow: 0 4px 16px rgba(162, 141, 138, 0.15);
     transform: translateY(-1px);
   }
+
   .card .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
+
   .card .index {
-    font-size: 10px;
-    color: #B5AFA6;
+    font-size: 11px;
+    color: #A39B8E;
     font-weight: 600;
   }
+
   .card-tags {
     display: flex;
-    gap: 4px;
+    gap: 6px;
+    align-items: center;
   }
+
   .card .tag {
-    font-size: 9px;
-    padding: 2px 7px;
-    border-radius: 5px;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 6px;
     font-weight: 600;
-    text-transform: uppercase;
     letter-spacing: 0.3px;
   }
-  /* 莫兰迪低饱和度标签 */
-  .tag.style-formal { background: #EAE5F2; color: #7B6899; }
-  .tag.style-hype { background: #E1ECEB; color: #537E7B; }
+
+  .tag.platform-ig { background: #E8E3D9; color: #6D6457; }
+  .tag.platform-x { background: #DFE4E0; color: #506152; }
+  .tag.wc-short { background: #EAE6EE; color: #6F627A; }
+  .tag.wc-medium { background: #ECE4DF; color: #886F63; }
 
   .card .text {
-    font-size: 12.5px;
-    color: #4A4A4A;
-    line-height: 1.55;
+    font-size: 13.5px;
+    color: #4A4643;
+    line-height: 1.6;
     word-break: break-word;
     white-space: pre-line;
   }
-  /* 梦幻浅紫色高亮关键词 */
+
   .card .text b {
-    color: #7B6899;
-    font-weight: 600;
+    color: #7A8B7B;
+    font-weight: 700;
   }
+
   .card .tip {
-    font-size: 10px;
-    color: #8E7CB5;
+    font-size: 10.5px;
+    color: #938C82;
     opacity: 0;
     transition: opacity 0.2s;
     font-weight: 500;
   }
+
   .card.copied {
-    background: #F1F7F4;
-    border-color: #A3C9B8;
-  }
-  .card.copied .tip {
-    opacity: 1;
-    color: #537E7B;
+    background: #F4F6F4;
+    border-color: #7A8B7B;
   }
 
-  /* 提示框：莫兰迪淡紫色 */
+  .card.copied .tip {
+    opacity: 1;
+    color: #5B6A5C;
+  }
+
   .toast {
     position: fixed;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%) translateY(20px);
-    background: #8E7CB5;
+    background: #5B6A5C;
     color: #FFFFFF;
-    padding: 8px 20px;
+    padding: 10px 24px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 12.5px;
     font-weight: 600;
     opacity: 0;
     pointer-events: none;
     transition: all 0.25s ease;
-    box-shadow: 0 4px 16px rgba(142, 124, 181, 0.3);
+    box-shadow: 0 4px 16px rgba(91, 106, 92, 0.3);
   }
+
   .toast.show {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
@@ -199,159 +211,79 @@
 </head>
 <body>
 <div class="container">
-  <h1>✨ PP Krit × GUCCI ✨</h1>
-  <p class="subtitle">Thank You For Your Hard Work</p>
+  <h1>✨ PP Krit × RIMOWA ✨</h1>
+  <p class="subtitle">Lifetime Memories & Trusted Companion</p>
   
   <div class="tabs">
-    <div class="tab active" id="tab-on-ig" data-mode="on-ig">ontheshow (IG/TT)</div>
-    <div class="tab" id="tab-on-x" data-mode="on-x">ontheshow (X)</div>
-    <div class="tab" id="tab-after-ig" data-mode="after-ig">aftertheshow (IG/TT)</div>
-    <div class="tab" id="tab-after-x" data-mode="after-x">aftertheshow (X)</div>
+    <div class="tab active" id="tab-ig" data-mode="ig">IG / TikTok</div>
+    <div class="tab" id="tab-x" data-mode="x">X (Twitter)</div>
   </div>
 
-  <button class="btn" id="refreshBtn">🎲 Generate New Batch (8 Unique Items)</button>
+  <button class="btn" id="refreshBtn">🎲 Generate New Batch (8 Unique Captions)</button>
   <div id="list"></div>
 </div>
 
 <div class="toast" id="toast">Copied to Clipboard ✓</div>
 
 <script>
-// ===== 第一梯队（70% 权重）：诠释理念、展现风格、气质融洽、高雅雅致、绝佳时尚表现力 =====
-const TIER1_INTERPRETATION = [
-  "flawlessly interpreting the house's design vision",
-  "demonstrating an unmatched fashion authority and poise",
-  "showing seamless synergy between his personal allure and brand ethos",
-  "embodying sophisticated elegance and modern sartorial finesse",
-  "a masterclass in high-fashion expression and refined elegance",
-  "merging personal charisma effortlessly with Gucci's high-fashion DNA",
-  "bringing aristocratic poise and supreme editorial presence",
-  "translating modern luxury into pure personal style"
-];
+const X_HASHTAGS = "\n\n#PPKritt\n#RIMOWA @rimowa\n#RIMOWAEssential #RIMOWAColours";
 
-// ===== 第二梯队（15% 权重）：与 DEMNA 的合作、完美消化设计概念 =====
-const TIER2_DEMNA = [
-  "fully digesting and bringing Demna's creative concept to life",
-  "highlighting a beautiful artistic connection with Demna",
-  "translating Demna's visionary aesthetic with profound understanding",
-  "celebrating a wonderful collaboration and creative alignment with Demna",
-  "capturing the true essence of Demna's design language"
-];
-
-// ===== 第三梯队（15% 权重）：身材、肤色与外貌 =====
-const TIER3_VISUALS = [
-  "with his slender silhouette and translucent porcelain glow",
-  "accentuating long, graceful proportions and ethereal features",
-  "complemented by a radiant complexion and striking, delicate profile",
-  "enhanced by his tall, model-like frame and luminous visual card"
-];
-
-const DB = {
-  NAME: "PP Krit",
-  BRAND_IG: ["GUCCI", "Gucci"],
-  BRAND_X: ["GUCCI", "Gucci", "@gucci"],
-  MFW_VARIANTS: ["MFW", "Milan Fashion Week", "MFW26"],
-
-  FORMAL: {
-    starters: [
-      "Front-row elegance from", "A portrait of high-fashion mastery,", 
-      "Defining quiet luxury,", "Exuding pure sartorial sophistication,", 
-      "An exquisite front-row moment with", "In perfect harmony with the house's identity,", 
-      "Bringing unparalleled fashion authority to Milan,", "A commanding presence at the show,"
-    ],
-    verbs: [
-      "interprets Gucci's modern design philosophy in", "graces the front row wearing", 
-      "embodies the house's elevated spirit in", "delivers an iconic fashion statement wearing", 
-      "translates couture aesthetics into personal style in", "captivates every lens at the show wearing"
-    ],
-    endings: [
-      "at Milan Fashion Week.", "for Gucci.", "a true highlight of the show.", 
-      "the ultimate expression of modern elegance.", "proving his status as a global fashion icon.", 
-      "leaving an indelible impression."
-    ]
-  },
-
-  HYPE: {
-    starters: [
-      "THE FRONT ROW KING IS HERE,", "Look at him commanding the front row,", 
-      "Unreal style synergy from", "The main event of Milan Fashion Week,", 
-      "SPEECHLESS at this level of fashion aura,", "Nobody brings this much grace like"
-    ],
-    verbs: [
-      "is serving top-tier front-row glam in", "is bringing Demna's concept to life in", 
-      "is out-shining every camera wearing", "is turning the front row into a magazine cover in"
-    ],
-    endings: [
-      "so proud of our Brand Ambassador!", "he completely owned the show!", 
-      "born for high fashion!", "our ultimate global icon!"
-    ]
-  },
-
-  AFTER: {
-    starters: [
-      "Celebrating a triumphant show trip with Demna,", "Reflecting on an inspiring front-row moment,", 
-      "A beautiful chapter written alongside Gucci,", "From memorable front-row moments to warm exchanges with Demna,"
-    ],
-    verbs: [
-      "shared a profound artistic synergy with", "brought Demna's vision to reality with", 
-      "created an unforgettable show memory alongside"
-    ],
-    endings: [
-      "excited for what PP Krit and Demna will create next.", 
-      "the future of this partnership looks brighter than ever.", 
-      "a perfect celebration of fashion, vision, and creativity."
-    ]
-  },
-
-  CONNECTORS: ["honestly,", "without a doubt,", "truthfully,", "effortlessly,"],
-
-  SHORT_FORMAL: [
-    "PP Krit flawlessly interprets Demna's GUCCI vision.",
-    "PP Krit defines front-row elegance for GUCCI.",
-    "A sublime harmony of PP Krit's personal style and GUCCI.",
-    "PP Krit brings quiet luxury and editorial authority to GUCCI.",
-    "GUCCI couture finds its modern muse in PP Krit.",
-    "PP Krit commands the GUCCI front row with aristocratic poise.",
-    "PP Krit x GUCCI: pure sartorial art and effortless grace.",
-    "PP Krit wears Demna's design concept with absolute perfection.",
-    "Demna's creative vision alive in PP Krit at GUCCI.",
-    "PP Krit's slender silhouette and clear glow elevate GUCCI styling."
+const VOCAB = {
+  // Opening phrases strictly avoiding "attend the event"
+  startersShort: [
+    "PP Krit with RIMOWA,",
+    "PP Krit on his journey with RIMOWA,",
+    "PP Krit sharing travel moments with RIMOWA,",
+    "PP Krit and RIMOWA,",
+    "PP Krit discovering new horizons with RIMOWA,",
+    "PP Krit embracing the spirit of travel with RIMOWA,"
   ],
 
-  SHORT_HYPE: [
-    "PP Krit in the GUCCI front row is high-fashion perfection!",
-    "PP Krit interpreted this GUCCI concept completely!",
-    "Front-row king PP Krit showing peak style authority for GUCCI!",
-    "PP Krit's fashion aura in GUCCI is unmatched!",
-    "No one wears GUCCI with this level of grace like PP Krit!"
+  phrasesShort: [
+    "every RIMOWA suitcase tells a story.",
+    "a trusted companion for a lifetime of memories.",
+    "living the Never Still spirit on every path.",
+    "cherishing priceless family trip memories.",
+    "luggage is a trusted friend for a lifetime of lives.",
+    "carrying beautiful memories with RIMOWA.",
+    "finding your trusted travel companion for life."
   ],
 
-  SHORT_AFTER: [
-    "PP Krit's GUCCI show journey was an absolute triumph.",
-    "A wonderful showcase for PP Krit's style and Demna at GUCCI.",
-    "PP Krit and GUCCI: a perfect synergy of vision in Milan.",
-    "Excited for the next chapter with PP Krit and Demna at GUCCI."
+  // Standalone Short Captions (Strictly ≤ 15 words)
+  presetShort: [
+    "PP Krit with RIMOWA! Every suitcase tells a story. Never Still.",
+    "PP Krit and RIMOWA: a trusted companion for a lifetime of memories.",
+    "PP Krit sharing moments with RIMOWA. Cherishing every journey with family.",
+    "PP Krit on his path with RIMOWA. Finding your trusted travel companion.",
+    "A special moment with PP Krit and RIMOWA. For a lifetime of lives!",
+    "PP Krit exploring travel stories with RIMOWA. Always Never Still.",
+    "Beautiful travels ahead with PP Krit and RIMOWA. A lifelong companion.",
+    "PP Krit with RIMOWA! Carrying precious family memories across every path.",
+    "PP Krit x RIMOWA: Every suitcase holds a lifetime of precious memories.",
+    "PP Krit on his journey with RIMOWA! Always Never Still."
   ],
 
-  SHORT_BITS: {
-    t1_adj: ["sublime", "effortless", "understated", "aristocratic", "exquisite", "supreme", "masterful"],
-    t1_noun: ["poise", "synergy", "elegance", "authority", "sophistication", "harmony", "finesse"],
-    v: ["embodies", "interprets", "elevates", "defines", "complements"],
-    target: ["Demna's vision", "GUCCI's design ethos", "the front row", "modern luxury"]
-  }
+  // Standalone Medium Captions (Strictly 16 - 24 words)
+  presetMedium: [
+    "PP Krit sharing beautiful moments with RIMOWA! Traveling is all about cherishing lifetime memories with family. Never Still!",
+    "PP Krit on his travel journey with RIMOWA. A suitcase is a trusted companion that accompanies every meaningful path.",
+    "PP Krit and RIMOWA celebrating lifelong travels together. Every RIMOWA suitcase tells a story for years to come.",
+    "Special moments with PP Krit and RIMOWA! Carrying family memories and beautiful travel stories along the way. For a lifetime of lives.",
+    "PP Krit with RIMOWA! Luggage isn't just a tool, but a trusted companion for a lifetime of memories."
+  ]
 };
 
-const X_TAGS = "PP KRIT X GUCCI MFW26\n#GUCCISS27xPPKRIT\n#GucciTheStoreShow\n#Gucci #PPKritt #MFW\n@gucci @ppkritt";
-const X_LIMIT = 280;
 const PAGE_SIZE = 8;
+const SEEN_KEY = "pp_rimowa_no_attend_seen";
+const SEEN_CAP = 1000;
 
-const SEEN_KEY = "ppgen_seen_v6";
-const SEEN_CAP = 800;
 function loadSeen() {
   try {
     const raw = sessionStorage.getItem(SEEN_KEY);
     return raw ? new Set(JSON.parse(raw)) : new Set();
   } catch (e) { return new Set(); }
 }
+
 function saveSeen(set) {
   try {
     const arr = Array.from(set);
@@ -362,158 +294,99 @@ function saveSeen(set) {
 const list = document.getElementById("list");
 const toast = document.getElementById("toast");
 let toastTimer = null;
-let currentMode = "on-ig";
+let currentPlatform = "ig";
 
 const pick = arr => arr[(Math.random() * arr.length) | 0];
 
-// ===== 70% / 15% / 15% 概率控制函数 =====
-function pickWeightedPhrase() {
-  const r = Math.random();
-  if (r < 0.70) {
-    return pick(TIER1_INTERPRETATION); // 70% 第一梯队
-  } else if (r < 0.85) {
-    return pick(TIER2_DEMNA);          // 15% 第二梯队
-  } else {
-    return pick(TIER3_VISUALS);        // 15% 第三梯队
-  }
+function countWords(text) {
+  return text.trim().split(/\s+/).filter(Boolean).length;
 }
 
-function buildMainText(styleGroup, styleType, isAfter, isX) {
-  const brand = pick(isX ? DB.BRAND_X : DB.BRAND_IG);
-  const mfw = pick(DB.MFW_VARIANTS);
-  const name = DB.NAME;
-
-  const starter = pick(styleGroup.starters);
-  const verb = pick(styleGroup.verbs);
-  const phrase = pickWeightedPhrase(); // 应用 70/15/15 权重
-  const ending = pick(styleGroup.endings);
-
-  let sentence = "";
-  const choice = Math.floor(Math.random() * 4);
-
-  if (choice === 0) {
-    sentence = `${starter} ${name} ${verb} ${brand} at ${mfw}, ${phrase} — ${ending}`;
-  } else if (choice === 1) {
-    sentence = `${name} ${verb} ${brand} from the front row at ${mfw}, ${phrase}. ${ending}`;
-  } else if (choice === 2) {
-    sentence = `${starter} ${name} in ${brand} at ${mfw}: ${phrase}. ${ending}`;
-  } else {
-    sentence = `${pick(DB.CONNECTORS)} ${name} ${verb} ${brand} at ${mfw}, ${phrase} — ${ending}`;
-  }
-
-  if (!sentence.includes(DB.NAME)) sentence = `${DB.NAME}, ${sentence}`;
-  if (!/gucci/i.test(sentence)) sentence = `${sentence} for Gucci`;
-  return sentence;
-}
-
-function buildTierText(tier, styleGroup, styleType, isAfter, isX) {
-  const name = DB.NAME;
-  const brand = pick(isX ? DB.BRAND_X : DB.BRAND_IG);
-
-  if (tier === 0) {
-    if (Math.random() < 0.70) {
-      const B = DB.SHORT_BITS;
-      const adj = pick(B.t1_adj), noun = pick(B.t1_noun), v = pick(B.v), target = pick(B.target);
-      const templates = [
-        `${name} ${v} ${target} in ${brand}.`,
-        `${name} x ${brand}: ${adj} ${noun}.`,
-        `${adj} ${noun} from ${name} at ${brand}.`,
-        `${name} brings ${adj} ${noun} to ${brand}.`
-      ];
-      let s = pick(templates);
-      if (!s.includes(name)) s = `${name}, ${s}`;
-      if (!/gucci/i.test(s)) s = `${s} - for GUCCI.`;
-      return s;
+function buildCaptionBody(isShortTarget) {
+  if (isShortTarget) {
+    if (Math.random() < 0.6) {
+      return pick(VOCAB.presetShort);
     }
-    let s = isAfter ? pick(DB.SHORT_AFTER) : pick(styleType === 0 ? DB.SHORT_FORMAL : DB.SHORT_HYPE);
-    if (!s.includes(DB.NAME)) s = `${DB.NAME}, ${s}`;
-    if (!/gucci/i.test(s)) s = `${s} - for GUCCI.`;
-    return s;
-  }
-
-  if (tier === 1) {
-    const mfw = pick(DB.MFW_VARIANTS);
-    const t = (Math.random() * 2) | 0;
-    if (t === 0) return `${pick(styleGroup.starters)} ${name} ${pick(styleGroup.verbs)} ${brand} at ${mfw} — ${pick(styleGroup.endings)}`;
-    return `${name} ${pick(styleGroup.verbs)} ${brand} at ${mfw}, ${pickWeightedPhrase()}.`;
-  }
-
-  return buildMainText(styleGroup, styleType, isAfter, isX);
-}
-
-function wordCount(text) {
-  return text.split(/\s+/).filter(Boolean).length;
-}
-
-function buildGrammarText(isX, styleType, isAfter) {
-  let styleGroup, styleName;
-  if (isAfter) {
-    styleGroup = DB.AFTER; styleName = styleType === 0 ? "Elegant" : "Hype";
-  } else if (styleType === 0) {
-    styleGroup = DB.FORMAL; styleName = "Elegant";
+    return `${pick(VOCAB.startersShort)} ${pick(VOCAB.phrasesShort)}`;
   } else {
-    styleGroup = DB.HYPE; styleName = "Hype";
+    if (Math.random() < 0.5) {
+      return pick(VOCAB.presetMedium);
+    }
+    return `${pick(VOCAB.startersShort)} ${pick(VOCAB.phrasesShort)} ${pick(VOCAB.phrasesShort)}`;
   }
+}
 
-  const r = Math.random();
-  let tier = r < 0.55 ? 0 : (r < 0.85 ? 1 : 2);
-  const ranges = [[1, 15], [16, 25], [26, 35]];
+function generateValidCaption(platform, isShortTarget) {
+  let body = "";
+  let words = 0;
+  let attempts = 0;
 
-  let sentence = buildTierText(tier, styleGroup, styleType, isAfter, isX);
-  let guard = 0;
-  while (guard++ < 40) {
-    const w = wordCount(sentence);
-    if (w >= ranges[tier][0] && w <= ranges[tier][1]) break;
-    sentence = buildTierText(tier, styleGroup, styleType, isAfter, isX);
-    if (guard >= 40 && tier > 0) { tier--; guard = 0; }
-  }
+  while (attempts++ < 60) {
+    body = buildCaptionBody(isShortTarget);
 
-  if (isX) {
-    let fullX = sentence + "\n\n" + X_TAGS;
-    if (fullX.length > X_LIMIT) {
-      let s = isAfter ? pick(DB.SHORT_AFTER) : pick(styleType === 0 ? DB.SHORT_FORMAL : DB.SHORT_HYPE);
-      if (!/gucci/i.test(s)) s = `${s} - for GUCCI.`;
-      fullX = s + "\n\n" + X_TAGS;
-      if (fullX.length > X_LIMIT) fullX = `PP Krit x ${pick(DB.BRAND_X)}!\n\n${X_TAGS}`;
-      sentence = fullX;
-    } else {
-      sentence = fullX;
+    // Rule 2: IG/TT tab MUST NOT contain @rimowa
+    if (platform === "ig") {
+      body = body.replace(/@rimowa/gi, "RIMOWA");
+    }
+
+    words = countWords(body);
+
+    // Strict rule check: 80% <=15 words, 100% <25 words
+    if (isShortTarget && words <= 15) {
+      break;
+    } else if (!isShortTarget && words > 15 && words < 25) {
+      break;
     }
   }
 
-  return { text: sentence, styleName: styleName };
+  // Safety fallback
+  if (words >= 25) {
+    body = "PP Krit on his journey with RIMOWA. Every path carries a lifetime of memories.";
+    words = countWords(body);
+  }
+
+  // Ensure core keywords exist
+  if (!body.includes("PP Krit")) body = `PP Krit with RIMOWA. ${body}`;
+  if (!body.includes("RIMOWA")) body = `${body} RIMOWA.`;
+
+  let fullText = body;
+  if (platform === "x") {
+    fullText = body + X_HASHTAGS;
+  }
+
+  return {
+    text: fullText,
+    wordCount: countWords(body)
+  };
 }
 
 function getBatch() {
-  const isX = currentMode.endsWith("-x");
-  const isAfter = currentMode.indexOf("after") === 0;
   const results = [];
-  const seen = new Set();
+  const localSeen = new Set();
   let globalSeen = loadSeen();
-  let styleIndex = 0;
   let misses = 0;
-  let flushed = false;
 
-  while (results.length < PAGE_SIZE) {
-    const currentStyle = styleIndex % 2;
-    const item = buildGrammarText(isX, currentStyle, isAfter);
+  // Guarantee exact distribution: 6 short (<=15 words), 2 medium (16-24 words) in batch of 8
+  const shortFlags = [true, true, true, true, true, true, false, false].sort(() => Math.random() - 0.5);
 
-    if (seen.has(item.text) || globalSeen.has(item.text)) {
+  for (let i = 0; i < PAGE_SIZE; i++) {
+    const isShortTarget = shortFlags[i];
+    let item = generateValidCaption(currentPlatform, isShortTarget);
+
+    while (localSeen.has(item.text) || globalSeen.has(item.text)) {
       misses++;
-      if (misses > 300 && !flushed) {
-        globalSeen = new Set();
-        flushed = true;
+      if (misses > 400) {
+        globalSeen.clear();
         misses = 0;
       }
-      if (misses > 800) break;
-      continue;
+      item = generateValidCaption(currentPlatform, isShortTarget);
     }
-    misses = 0;
-    seen.add(item.text);
+
+    localSeen.add(item.text);
     globalSeen.add(item.text);
     results.push(item);
-    styleIndex++;
   }
+
   saveSeen(globalSeen);
   return results;
 }
@@ -521,27 +394,32 @@ function getBatch() {
 function render() {
   list.innerHTML = "";
   const items = getBatch();
+
   items.forEach((item, i) => {
     const card = document.createElement("div");
     card.className = "card";
     
     const highlighted = item.text
-      .replace(/PP Krit/g, m => `<b>${m}</b>`)
-      .replace(/@?GUCCI|Gucci/g, m => `<b>${m}</b>`)
-      .replace(/MFW\d*|Milan Fashion Week/gi, m => `<b>${m}</b>`)
-      .replace(/Demna/g, m => `<b>${m}</b>`);
+      .replace(/PP Krit/g, "<b>PP Krit</b>")
+      .replace(/RIMOWA/g, "<b>RIMOWA</b>")
+      .replace(/#PPKritt/g, "<b>#PPKritt</b>")
+      .replace(/#RIMOWA/g, "<b>#RIMOWA</b>")
+      .replace(/@rimowa/g, "<b>@rimowa</b>");
 
-    const styleClass = item.styleName === "Elegant" ? "style-formal" : "style-hype";
+    const platformTag = currentPlatform === "ig" ? "IG/TT (No @)" : "X (Twitter)";
+    const platformClass = currentPlatform === "ig" ? "platform-ig" : "platform-x";
+    const wcTagClass = item.wordCount <= 15 ? "wc-short" : "wc-medium";
 
     card.innerHTML = `
       <div class="card-header">
-        <span class="index">#${i + 1}</span>
+        <span class="index">#${i + 1} • Words: ${item.wordCount}</span>
         <div class="card-tags">
-          <span class="tag ${styleClass}">${item.styleName}</span>
+          <span class="tag ${wcTagClass}">${item.wordCount <= 15 ? "≤15 Words" : "<25 Words"}</span>
+          <span class="tag ${platformClass}">${platformTag}</span>
         </div>
       </div>
       <div class="text">${highlighted}</div>
-      <div style="text-align: right; margin-top: 4px;"><span class="tip">Tap to copy</span></div>
+      <div style="text-align: right; margin-top: 6px;"><span class="tip">Tap to copy</span></div>
     `;
     
     card.addEventListener("click", () => copyText(item.text, card));
@@ -577,8 +455,8 @@ document.getElementById("refreshBtn").addEventListener("click", render);
 
 document.querySelectorAll(".tab").forEach(tab => {
   tab.addEventListener("click", () => {
-    if (currentMode === tab.dataset.mode) return;
-    currentMode = tab.dataset.mode;
+    if (currentPlatform === tab.dataset.mode) return;
+    currentPlatform = tab.dataset.mode;
     document.querySelectorAll(".tab").forEach(t => t.classList.toggle("active", t === tab));
     render();
   });
